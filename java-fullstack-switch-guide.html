@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java Full Stack Career Switch Guide</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1c2233;--mute:#5d6680;--line:#e3e6ef;--acc:#4f46e5;--acc2:#eef0ff;--ok:#16a34a;--warn:#b45309;--warnbg:#fff7e6}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px}
+header{background:linear-gradient(135deg,#312e81,#4f46e5);color:#fff;padding:22px 18px 14px}
+header h1{margin:0 0 4px;font-size:22px}
+header p{margin:0;opacity:.85;font-size:13.5px}
+nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);display:flex;overflow-x:auto;gap:4px;padding:8px 10px;scrollbar-width:thin}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);padding:7px 12px;border-radius:999px;font-size:13px;cursor:pointer;white-space:nowrap}
+nav button.active{background:var(--acc);color:#fff;border-color:var(--acc)}
+main{max-width:980px;margin:0 auto;padding:16px 14px 60px}
+section.tab{display:none}section.tab.active{display:block}
+h2{font-size:20px;margin:6px 0 10px}
+h3{font-size:16.5px;margin:22px 0 8px;color:#312e81}
+h4{margin:14px 0 6px;font-size:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.intro{color:var(--mute)}
+.note{background:var(--warnbg);border-left:4px solid #f59e0b;padding:10px 12px;border-radius:8px;margin:12px 0}
+.tip{background:var(--acc2);border-left:4px solid var(--acc);padding:10px 12px;border-radius:8px;margin:12px 0}
+.grp{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+.grp>summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.grp>summary::-webkit-details-marker{display:none}
+.grp>summary .cnt{font-weight:500;font-size:12.5px;color:var(--mute);white-space:nowrap}
+.grp ul{margin:0;padding:0 14px 12px;list-style:none}
+.grp li{padding:7px 0;border-top:1px dashed var(--line)}
+.grp label{display:flex;gap:9px;align-items:flex-start;cursor:pointer}
+.grp input{margin-top:4px;accent-color:var(--acc);width:16px;height:16px;flex:0 0 auto}
+.grp .sub{color:var(--mute);font-size:13.5px}
+.done .t{text-decoration:line-through;color:var(--mute)}
+.res{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.res a{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.res a:hover{border-color:var(--acc)}
+.res b{display:block;font-size:14px}
+.res span{font-size:12.5px;color:var(--mute)}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;background:var(--acc2);color:var(--acc);margin-left:4px;font-weight:600;vertical-align:middle}
+.tag.lvl-beginner{background:#ecfdf3;color:#15803d}.tag.lvl-intermediate{background:#fff7e6;color:#b45309}.tag.lvl-advanced{background:#fdecec;color:#b91c1c}
+.tag.paid{background:#fdecec;color:#b91c1c}.tag.book{background:#ecfdf3;color:#15803d}.tag.yt{background:#fff1f2;color:#be123c}
+.bar{height:9px;background:#e9ebf3;border-radius:99px;overflow:hidden}
+.bar>div{height:100%;background:linear-gradient(90deg,#6366f1,#22c55e);width:0;transition:width .3s}
+.prog{font-size:13px;color:var(--mute);margin:6px 0 2px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 9px;text-align:left;vertical-align:top}
+th{background:#f1f2f8}
+.tblwrap{overflow-x:auto;border-radius:10px}
+.qa details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:7px 0}
+.qa summary{cursor:pointer;padding:10px 12px;font-weight:500}
+.qa details>div{padding:0 12px 12px;color:#333b52;font-size:14px}
+.qcat{margin-top:20px}
+input.search{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:14.5px}
+.script{background:#fbfbfe;border:1px solid var(--line);border-left:4px solid var(--acc);padding:12px 14px;border-radius:8px;font-style:italic;color:#2a3148}
+ul.plain{padding-left:20px}ul.plain li{margin:4px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.two{grid-template-columns:1fr}header h1{font-size:19px}}
+.do{border-left:4px solid var(--ok)}.dont{border-left:4px solid #dc2626}
+code{background:#f1f2f8;padding:1px 5px;border-radius:5px;font-size:13px}
+footer{color:var(--mute);font-size:12.5px;text-align:center;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Java Full Stack Career Switch Guide</h1>
+  <p>Career switch → Java Full Stack Developer · Java · Spring Boot · React · Kafka · Microservices · SQL · Software Engineering</p>
+</header>
+<nav id="nav"></nav>
+<main id="main">
+
+<!-- ================= START HERE ================= -->
+<section class="tab" id="start" data-label="🏁 Start Here">
+<h2>Start Here: the plan</h2>
+<div class="card">
+<b>Your situation:</b> 6 months internship + 6 months full-time on IntelliMatch (data reconciliation). You want to become a <b>Java Full Stack Developer</b> (Java + Spring Boot + React + Kafka + Microservices + SQL).
+<div class="tip"><b>How to use this guide:</b> learn the topics in each tab in order, build the <b>mini projects</b> at the bottom of every tab to get hands-on, and alongside them build the <b>combined project, ShopSphere</b> (see the <i>Combined Project</i> tab), which brings every topic together. That is the project you show in interviews. Your current experience still helps: SQL, working with data, production support and working in a professional team all carry over to development.</div>
+</div>
+
+<h3>Overall progress</h3>
+<div class="card">
+<div class="prog" id="overallTxt">0% complete</div>
+<div class="bar"><div id="overallBar"></div></div>
+<p class="intro" style="font-size:13px;margin-bottom:0">Tick topics in each tab as you finish them. Progress is saved in this browser when the browser allows it. If your ticks disappear, keep a separate note of where you are.</p>
+<div id="tabProg" style="margin-top:10px"></div>
+</div>
+
+<h3>24-week roadmap (about 2–3 hrs on weekdays + 6–8 hrs on weekends)</h3>
+<div class="tblwrap"><table>
+<tr><th>Weeks</th><th>Focus</th><th>Output by the end</th></tr>
+<tr><td>1–4</td><td>Core Java (OOP, collections, exceptions, generics, Java 8+ streams), Git basics, SQL refresh, 1 DSA problem per day</td><td>Core Java + SQL mini projects; <b>ShopSphere Phase 0</b> started; 25+ DSA problems</td></tr>
+<tr><td>5–6</td><td>Advanced Java: concurrency, JVM, modern Java (17/21/25), Maven, JUnit 5</td><td>Advanced Java mini projects; <b>ShopSphere Phase 0</b> (pure-Java core) done</td></tr>
+<tr><td>7–10</td><td>Spring Core → Spring Boot → REST → Spring Data JPA → Spring Security (JWT) → testing</td><td>Spring mini projects; <b>ShopSphere Phase 1</b> (Spring Boot backend) done</td></tr>
+<tr><td>11–13</td><td>HTML/CSS → JavaScript → TypeScript → React</td><td><b>ShopSphere Phase 2</b> (React + deployed v1) done. <b>Resume + LinkedIn ready; start applying in week 12</b></td></tr>
+<tr><td>14–17</td><td>Microservices patterns, Docker, Kafka, Spring Kafka</td><td>Kafka mini projects; <b>ShopSphere Phases 3–4</b> (microservices + Kafka) done</td></tr>
+<tr><td>18–20</td><td>Kubernetes basics, CI/CD (GitHub Actions), AWS basics, observability</td><td><b>ShopSphere Phase 5</b> (Kubernetes, CI/CD, cloud, monitoring) done</td></tr>
+<tr><td>21–24</td><td>LLD + HLD basics, mock interviews, revision of the question bank</td><td><b>ShopSphere Phase 6</b> (load tests, design doc, demo); applying heavily; 120+ DSA problems</td></tr>
+</table></div>
+<div class="note"><b>Don't wait until you've "finished everything" to apply.</b> Nobody finishes this list. Apply once you have core Java, Spring Boot and one solid deployed project (about week 12). Keep learning while you interview.</div>
+
+<h3>Daily routine that works</h3>
+<ul class="plain">
+<li><b>30–45 min:</b> 1 DSA problem in Java (easy → medium).</li>
+<li><b>60–90 min:</b> the current roadmap topic (docs or course, then code it yourself).</li>
+<li><b>30 min:</b> build the project feature that uses what you just learned.</li>
+<li><b>Weekend:</b> a bigger project chunk + revise 20 interview questions + 1 mock interview (with a friend or a recording).</li>
+</ul>
+
+<h3>Version notes (late 2026)</h3>
+<ul class="plain">
+<li><b>Java:</b> learn on <b>Java 21 LTS</b> (most widely used in companies). Know what's new in <b>Java 25 LTS</b>. Many companies still run Java 8/11/17, so know the differences.</li>
+<li><b>Spring Boot:</b> most jobs use <b>3.x</b>; <b>4.x</b> (Spring Framework 7) is the newest. The concepts are the same. Learn on 3.x/4.x, never 2.x tutorials (they use the old <code>javax.*</code> package names; new code uses <code>jakarta.*</code>).</li>
+<li><b>React:</b> React 19 with <b>Vite</b>. Create React App is deprecated, so skip tutorials that use it.</li>
+<li><b>Kafka:</b> Kafka 4.x runs in <b>KRaft mode</b> (ZooKeeper has been removed). Older tutorials with ZooKeeper are fine for concepts only.</li>
+</ul>
+
+<h3>Master roadmaps (bookmark these)</h3>
+<div class="res" id="res-start"></div>
+</section>
+
+<!-- topic tabs rendered by script -->
+<section class="tab" id="java" data-label="☕ Core Java"></section>
+<section class="tab" id="advjava" data-label="⚙️ Advanced Java"></section>
+<section class="tab" id="sql" data-label="🗄️ SQL & DB"></section>
+<section class="tab" id="spring" data-label="🌱 Spring Boot"></section>
+<section class="tab" id="frontend" data-label="⚛️ React & Frontend"></section>
+<section class="tab" id="micro" data-label="🧩 Microservices"></section>
+<section class="tab" id="kafka" data-label="📨 Kafka"></section>
+<section class="tab" id="devops" data-label="🐳 DevOps & Cloud"></section>
+<section class="tab" id="testing" data-label="🧪 Testing"></section>
+<section class="tab" id="se" data-label="📐 SE Practices & Agile"></section>
+<section class="tab" id="dsa" data-label="🧠 DSA & System Design"></section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="tab" id="projects" data-label="🏆 Combined Project">
+<h2>The combined project: one project that uses everything</h2>
+<p class="intro">The mini projects in each tab teach one topic at a time. This tab is the <b>one big project</b> that combines <b>all</b> of them: Core Java, Advanced Java, SQL, Spring Boot, React, Microservices, Kafka, DevOps, Testing, SE practices, DSA and System Design. You build it in phases alongside the 24-week roadmap, so by the end you have a single professional-grade project you can talk about for a whole interview.</p>
+
+<div class="card" style="border:2px solid var(--acc)">
+<h3 style="margin-top:0">⭐ ShopSphere: a full e-commerce platform</h3>
+<p><b>What it is:</b> an online store like a small Amazon/Flipkart. Customers browse products, search, add to cart, check out and track orders. Admins manage products, stock, orders and see sales dashboards. There's also a flash-sale feature, where thousands of users try to buy limited stock at the same time.</p>
+<p><b>Why this project:</b> everyone understands e-commerce. It naturally needs every skill in this guide (data modelling, concurrency, security, events, scaling), and it matches the most common microservices and system design interview questions.</p>
+<p><b>Final architecture:</b> React storefront + React admin panel → API Gateway → 9 Spring Boot microservices (auth/user, catalog, search, cart, order, inventory, payment-mock, review, notification) → PostgreSQL, Redis, Kafka, OpenSearch → running in Docker/Kubernetes, deployed with CI/CD and monitored with Prometheus + Grafana + tracing.</p>
+</div>
+
+<h3>Coverage map: every tab → where it's used in ShopSphere</h3>
+<div class="tblwrap"><table>
+<tr><th style="width:150px">Topic (tab)</th><th>Where ShopSphere uses it</th></tr>
+<tr><td><b>☕ Core Java</b></td><td>Domain model with classes, records, enums and a sealed <code>OrderStatus</code>; <code>BigDecimal</code> for all prices and taxes; streams for cart totals, invoices and reports; custom exceptions (<code>OutOfStockException</code>, <code>InvalidCouponException</code>); Date/Time API for delivery estimates and sale windows; CSV parser for bulk product import (file I/O); Maven multi-module build.</td></tr>
+<tr><td><b>⚙️ Advanced Java</b></td><td>Product page loads details, reviews, stock and recommendations in parallel with <code>CompletableFuture</code>; virtual threads enabled on I/O-heavy services; flash-sale stock reservation that is safe under heavy concurrency; thread-safe in-memory rate limiter; custom <code>@Audited</code> annotation implemented with AOP/reflection; profile a slow endpoint with JFR and fix it.</td></tr>
+<tr><td><b>🗄️ SQL & DB</b></td><td>Normalised schema (users, addresses, products, categories, variants, carts, orders, order_items, payments, reviews) with an ER diagram; Flyway migrations; admin reports with window functions and CTEs (top 5 products per category, monthly revenue, repeat customers, running totals); indexes tuned with EXPLAIN ANALYZE; optimistic locking on inventory; a deliberate isolation level for checkout; Redis for cart and cache.</td></tr>
+<tr><td><b>🌱 Spring Boot</b></td><td>REST APIs with validation and ProblemDetail errors; JPA relationships with N+1 fixed; search/filter/pagination with Specifications; Spring Security with JWT + roles (CUSTOMER, ADMIN); Keycloak OAuth2 later; <code>@Cacheable</code> with Redis; <code>@Scheduled</code> abandoned-cart emails; Spring Batch bulk product import; image upload; OpenAPI docs; Actuator.</td></tr>
+<tr><td><b>⚛️ React</b></td><td>Storefront: catalogue with filters, debounced search with autocomplete, product page, cart, multi-step checkout form (React Hook Form + Zod), order history and live order tracking over WebSocket. Admin panel: product CRUD, order management, sales charts. TypeScript, React Router, protected routes, TanStack Query, Zustand for the cart, lazy-loaded routes, responsive Tailwind UI.</td></tr>
+<tr><td><b>🧩 Microservices</b></td><td>Split the monolith into 9 services with database-per-service; Spring Cloud Gateway (routing, JWT check, rate limiting); service discovery; centralised config; Saga for checkout (reserve stock → pay → confirm, or compensate); transactional outbox; Resilience4j circuit breakers, timeouts and retries; correlation IDs.</td></tr>
+<tr><td><b>📨 Kafka</b></td><td>Order lifecycle, inventory and payment events driving the Saga; notification-service consumes events to send emails; retry topics, dead-letter topic and idempotent consumers; Debezium CDC keeps the OpenSearch product index in sync; clickstream events → Kafka Streams → "Trending now" products; Avro + Schema Registry.</td></tr>
+<tr><td><b>🐳 DevOps & Cloud</b></td><td>Multi-stage Dockerfiles; Docker Compose for the whole stack; Kubernetes manifests or Helm (kind/minikube); GitHub Actions CI/CD (test → scan → build image → push → deploy); deployment to AWS (ECS/EC2 + RDS + S3/CloudFront) or free hosting; Prometheus, Grafana, OpenTelemetry tracing, centralised logs.</td></tr>
+<tr><td><b>🧪 Testing</b></td><td>JUnit 5 + Mockito unit tests (pricing, discounts, Saga steps); @WebMvcTest and @DataJpaTest; Testcontainers with Postgres, Kafka and Redis; REST Assured API tests; Vitest + React Testing Library; Playwright end-to-end checkout test; Gatling load test of the flash sale proving no overselling; JaCoCo coverage + SonarQube quality gate in CI.</td></tr>
+<tr><td><b>📐 SE Practices & Agile</b></td><td>Run the build as Scrum on a GitHub Projects board (epics, user stories with acceptance criteria, story points, 2-week sprints, retro notes); trunk-based or Git Flow branching with PRs, a PR template and Conventional Commits; semantic-versioned releases with a changelog; ADRs for big decisions; a postmortem for an incident you inject on purpose. Design patterns used: Strategy (discounts, shipping), Factory (payment providers), Builder (orders), State (order lifecycle), Observer (events), Adapter (payment gateway), Decorator (pricing add-ons). SOLID throughout.</td></tr>
+<tr><td><b>🧠 DSA</b></td><td>Trie for search autocomplete; LRU cache for "recently viewed"; heap/top-K for trending products; token-bucket rate limiter; graph + Dijkstra to pick the nearest warehouse; binary search for price-range filtering on sorted data. Implement them in Java with tests before using libraries.</td></tr>
+<tr><td><b>🏗️ System Design</b></td><td>A written design doc: requirements, capacity estimates, high-level diagram, data model, caching strategy, consistency choices (CAP), scaling plan for the flash sale (queueing, Redis stock counters), failure scenarios. LLD class diagrams for cart, order and the discount engine. This is your answer to "design an e-commerce system".</td></tr>
+</table></div>
+
+<h3>Build plan: 7 phases matched to the roadmap</h3>
+<div class="tip">Each phase ends with a working, tested, committed version and a short LinkedIn post. Never break what already works; tag a release (v0.1, v0.2…) at the end of each phase.</div>
+
+<details class="grp" open><summary><span>Phase 0 (weeks 1–6): <i>shopsphere-core</i>, pure Java</span><span class="cnt">Core Java · Advanced Java · DSA</span></summary><ul style="list-style:disc;padding-left:32px">
+<li>Plain Java + Maven library, no Spring: Product, Category, Cart, Order, Customer, Coupon domain classes.</li>
+<li>Pricing engine: taxes, coupons, discount rules with the Strategy pattern, all in BigDecimal.</li>
+<li>CSV product importer with validation and an error report.</li>
+<li>Trie autocomplete, LRU "recently viewed", top-K bestsellers with a heap.</li>
+<li>Concurrency: simulate 1,000 threads buying 50 units of a flash-sale item, show the race condition, then fix it (synchronized → locks → atomics) and compare.</li>
+<li>JUnit 5 tests for everything. <b>Done when:</b> 80%+ coverage, a clean README, published on GitHub.</li>
+</ul></details>
+
+<details class="grp"><summary><span>Phase 1 (weeks 7–10): Spring Boot monolith backend</span><span class="cnt">Spring · SQL · Security · Testing</span></summary><ul style="list-style:disc;padding-left:32px">
+<li>Reuse the Phase 0 domain inside a Spring Boot app with a modular package structure (catalog, cart, order, user).</li>
+<li>PostgreSQL schema + Flyway; JPA entities and relationships; Specifications for search, filters and pagination.</li>
+<li>REST APIs, validation, ProblemDetail errors, MapStruct DTOs, OpenAPI docs.</li>
+<li>JWT auth with CUSTOMER/ADMIN roles; Redis cache for the catalogue; @Scheduled abandoned-cart job; Spring Batch product import.</li>
+<li>Admin SQL reports with window functions; tune indexes with EXPLAIN ANALYZE.</li>
+<li><b>Done when:</b> unit + slice + Testcontainers tests pass and Swagger shows every endpoint.</li>
+</ul></details>
+
+<details class="grp"><summary><span>Phase 2 (weeks 11–13): React storefront + admin, deploy v1</span><span class="cnt">React · TypeScript · DevOps basics</span></summary><ul style="list-style:disc;padding-left:32px">
+<li>Storefront: home, catalogue with filters, search with autocomplete, product page, cart, checkout, order history.</li>
+<li>Admin: product CRUD with image upload, order list and status updates, sales charts.</li>
+<li>TanStack Query, Zustand cart, React Hook Form + Zod, protected routes, lazy loading, Vitest + RTL tests.</li>
+<li>Docker Compose for the whole stack; deploy (backend on Render/Railway/AWS, frontend on Vercel/Netlify).</li>
+<li><b>Done when:</b> live demo link works end to end. <b>Start applying for jobs now.</b></li>
+</ul></details>
+
+<details class="grp"><summary><span>Phase 3 (weeks 14–15): split into microservices</span><span class="cnt">Microservices</span></summary><ul style="list-style:disc;padding-left:32px">
+<li>Extract user, catalog, cart, order, inventory, payment-mock, review and notification services, each with its own database.</li>
+<li>Spring Cloud Gateway, service discovery, centralised config; Keycloak for OAuth2/OIDC login.</li>
+<li>Synchronous calls with RestClient/OpenFeign + Resilience4j (timeouts, retries, circuit breaker, fallbacks).</li>
+<li>Write ADRs explaining why and how you split it.</li>
+<li><b>Done when:</b> the React app works unchanged through the gateway.</li>
+</ul></details>
+
+<details class="grp"><summary><span>Phase 4 (weeks 16–17): event-driven with Kafka</span><span class="cnt">Kafka · Saga · Outbox</span></summary><ul style="list-style:disc;padding-left:32px">
+<li>Checkout Saga over Kafka: OrderCreated → StockReserved → PaymentCompleted → OrderConfirmed, with compensation on failure (the payment mock fails ~20% of the time).</li>
+<li>Transactional outbox (+ Debezium); idempotent consumers; retry topics and a dead-letter topic with a re-process admin endpoint.</li>
+<li>notification-service emails customers; WebSocket pushes live order status to React.</li>
+<li>search-service: Debezium CDC → Kafka → OpenSearch for full-text product search.</li>
+<li>Clickstream → Kafka Streams → "Trending now" widget on the home page.</li>
+<li><b>Done when:</b> killing any one service mid-checkout never leaves stock or orders in a wrong state.</li>
+</ul></details>
+
+<details class="grp"><summary><span>Phase 5 (weeks 18–20): production setup</span><span class="cnt">Docker · Kubernetes · CI/CD · Cloud · Observability</span></summary><ul style="list-style:disc;padding-left:32px">
+<li>Kubernetes manifests/Helm with probes, ConfigMaps, Secrets, autoscaling; run on kind/minikube.</li>
+<li>GitHub Actions: PR checks (tests, JaCoCo, Sonar), images pushed to a registry on merge, automatic deploy.</li>
+<li>Prometheus metrics, Grafana dashboards (orders/min, error rate, consumer lag), OpenTelemetry traces across services.</li>
+<li>Cloud deployment on AWS (stay on the free tier) or a cheaper alternative, documented step by step.</li>
+<li><b>Done when:</b> a push to main reaches a running environment automatically and you can trace one checkout across all services.</li>
+</ul></details>
+
+<details class="grp"><summary><span>Phase 6 (weeks 21–24): harden, measure and present</span><span class="cnt">Testing · System Design · SE Practices</span></summary><ul style="list-style:disc;padding-left:32px">
+<li>Flash-sale load test with Gatling (e.g. 5,000 users, 100 units): prove there's no overselling; try Redis atomic counters vs DB locking and record the numbers.</li>
+<li>Playwright end-to-end checkout test in CI.</li>
+<li>Security pass against the OWASP Top 10; dependency scanning.</li>
+<li>Inject an incident (e.g. Kafka consumer stuck), handle it, write a blameless postmortem.</li>
+<li>Final design doc + architecture diagrams + a 3–5 minute demo video + a polished README.</li>
+<li><b>Done when:</b> you can whiteboard the whole system and explain every trade-off in 10 minutes.</li>
+</ul></details>
+
+<h3>Repository structure</h3>
+<div class="card"><pre style="margin:0;white-space:pre-wrap;font-size:13px">shopsphere/
+├── docs/            → design doc, ADRs, diagrams, postmortems
+├── core/            → Phase 0 pure-Java domain & algorithms
+├── services/
+│   ├── gateway/  user/  catalog/  search/  cart/
+│   ├── order/  inventory/  payment-mock/  review/  notification/
+├── frontend/
+│   ├── storefront/  (React + TS)
+│   └── admin/       (React + TS)
+├── infra/
+│   ├── docker-compose.yml
+│   ├── k8s/ or helm/
+│   └── monitoring/  (Prometheus, Grafana dashboards)
+├── tests/           → Gatling load tests, Playwright e2e
+└── .github/workflows/ → CI/CD pipelines</pre></div>
+
+<h3>How to show it on your resume and in interviews</h3>
+<div class="card"><ul class="plain">
+<li><b>Resume entry:</b> "ShopSphere: e-commerce platform with 9 Spring Boot microservices, Kafka-based checkout Saga with outbox, React + TypeScript storefront and admin, PostgreSQL/Redis/OpenSearch, Docker + Kubernetes, GitHub Actions CI/CD, Prometheus/Grafana monitoring."</li>
+<li><b>Impact bullets (use your measured numbers):</b> "Prevented overselling under 5,000 concurrent buyers during load tests"; "Cut product page latency from X ms to Y ms with parallel calls + Redis caching"; "80%+ test coverage with Testcontainers integration tests".</li>
+<li><b>Interview walkthrough (5 minutes):</b> the problem → architecture diagram → one hard problem (the flash-sale race condition or the Saga failure handling) → what you'd improve next.</li>
+<li>Keep the phase tags (v0.1–v1.0), so interviewers can see how the project grew from a monolith into microservices.</li>
+</ul></div>
+
+<h3>Prefer a different theme? Same coverage, different domain</h3>
+<div class="two">
+<div class="card"><h4 style="margin-top:0">🍔 FoodDash: food delivery platform</h4><ul class="plain">
+<li>Restaurants, menus, cart, orders, delivery partners, live tracking.</li>
+<li>Kafka order events between restaurant, kitchen, delivery and notification services; Saga for order + payment.</li>
+<li>Dijkstra/nearest-partner assignment (DSA); WebSocket live map (React); surge handling at lunchtime (system design, concurrency).</li>
+<li>Same SQL, Spring, testing, DevOps and Scrum checklist as ShopSphere.</li>
+</ul></div>
+<div class="card"><h4 style="margin-top:0">🎟️ EventHub: event and ticket booking platform</h4><ul class="plain">
+<li>Events, venues, seat maps, booking, waitlists, e-tickets with QR codes.</li>
+<li>Seat holds with TTL and locking so no seat is double-booked (concurrency); Kafka for booking, payment and email events.</li>
+<li>Interval trees/sorting for schedules (DSA); live seat map (React + WebSocket); traffic spikes when tickets go on sale (system design).</li>
+<li>Same SQL, Spring, testing, DevOps and Scrum checklist as ShopSphere.</li>
+</ul></div>
+</div>
+
+<div class="tip"><b>Rules:</b> (1) Commit small and often with clear messages; recruiters look at commit history. (2) Use tutorials for ideas, but write the code yourself and be able to explain every line. (3) Measure things (latency, throughput, coverage) and put the real numbers in the README. (4) Pin this repo first on your GitHub profile.</div>
+</section>
+
+<!-- ================= JOB SEARCH ================= -->
+<section class="tab" id="jobs" data-label="💼 Roles & Applying">
+<h2>Are there roles for your experience? Yes.</h2>
+<div class="card">
+<p>Java + Spring Boot + React is one of the most hired-for stacks in India, across product companies, global capability centres (GCCs), IT services and startups. With about 1 year of total experience (6 months full-time + 6 months internship), you fit <b>0–2 year</b> and <b>1–3 year</b> openings, as well as associate and graduate programs.</p>
+<div class="note"><b>Be honest about experience:</b> write "1 year (including a 6-month internship)" or list them separately. Many recruiters count only full-time months; don't stretch it. Your projects make up the difference.</div>
+</div>
+
+<h3>Job titles to search for</h3>
+<div class="card"><ul class="plain">
+<li>Associate Software Engineer / Software Engineer I / SDE-1</li>
+<li>Java Developer (0–2 yrs) · Java Full Stack Developer · Java Backend Developer</li>
+<li>Full Stack Engineer (React + Spring Boot) · Application Developer · Programmer Analyst</li>
+<li>Associate Consultant (Java) · Graduate / Associate Engineer programs</li>
+</ul>
+<p><b>Search keywords:</b> <code>Java Spring Boot 0-2 years</code>, <code>Java full stack React</code>, <code>Spring Boot microservices 1 year</code>, <code>Java backend developer fresher</code>, <code>React Spring Boot developer</code>.</p></div>
+
+<h3>Where to target</h3>
+<div class="card">
+<h4>A. Internal move (fastest route)</h4>
+<p>Ask your current manager or HR whether you can transfer to a development team inside the company. Meanwhile, volunteer for any scripting, SQL tooling, automation or API work. That gives you real development experience to put on your resume.</p>
+<h4>B. Product companies and global capability centres (GCCs)</h4>
+<p>India has thousands of engineering centres of global companies (retail, e-commerce, SaaS, travel, telecom, healthcare, manufacturing and more), and many run Java/Spring backends with React frontends. Search LinkedIn for "Java Spring Boot React" filtered by 0–2 years, and check career pages of companies whose products you use.</p>
+<h4>C. IT services and consulting (high volume, easier entry)</h4>
+<p>TCS, Infosys, Wipro, HCLTech, Cognizant, Accenture, Capgemini, LTIMindtree, Tech Mahindra, Virtusa, Hexaware. They hire Java full stack developers in large numbers, and moving between projects later is common.</p>
+<h4>D. Startups (fast learning, broad ownership)</h4>
+<p>Use Wellfound, Cutshort and Instahyre. Check the tech stack in every post (some use Node/Go/Python). Expect DSA + machine-coding rounds and a deep discussion of your projects.</p>
+</div>
+
+<h3>Where to apply</h3>
+<div class="res" id="res-jobs"></div>
+
+<h3>Resume: present your current role in technical terms</h3>
+<div class="card">
+<ul class="plain">
+<li><b>One page.</b> Headline: <i>"Software Engineer | Java · Spring Boot · React · Kafka · Microservices · SQL"</i>.</li>
+<li><b>Summary (2 lines):</b> about 1 year of IT experience with strong SQL, data and production-support skills; builds full stack apps with Java, Spring Boot, React and Kafka.</li>
+<li><b>Order:</b> Summary → Skills → Projects (ShopSphere first) → Experience → Education/Certifications.</li>
+<li><b>Write the current-role bullets around technical skills</b> (SQL, data handling, troubleshooting, automation) and add your real numbers:
+<ul>
+<li>"Wrote and optimised SQL queries to investigate data issues across large datasets, cutting investigation time by Z%."</li>
+<li>"Configured and maintained rule-based data processing for N data sources handling ~X records/day."</li>
+<li>"Supported production runs: diagnosed failed data feeds and coordinated fixes with upstream teams within SLA."</li>
+<li>"Automated [a report/check] using [SQL/scripts], saving N hrs/week."</li>
+</ul></li>
+<li><b>Project bullets:</b> stack + what you built + one hard problem you solved + a link (e.g. "Prevented overselling under concurrent orders using optimistic locking and a Kafka-based Saga").</li>
+<li><b>ATS:</b> copy the exact keywords from the job description (Spring Boot, REST, Microservices, Kafka, JPA/Hibernate, React, TypeScript, SQL, JUnit, Docker, AWS, Agile/Scrum). Use a simple layout: no tables, columns or photos.</li>
+<li>Put the GitHub, LinkedIn and live demo links at the top.</li>
+</ul>
+</div>
+
+<h3>LinkedIn and Naukri setup</h3>
+<div class="two">
+<div class="card"><h4 style="margin-top:0">LinkedIn</h4><ul class="plain">
+<li>Headline the same as the resume headline.</li>
+<li>"Open to work": recruiters only (so your current employer doesn't see a public banner).</li>
+<li>About section: your switch story in 4–5 lines.</li>
+<li>Featured: ShopSphere repo + demo video.</li>
+<li>Post your learning progress weekly. Recruiters do notice.</li>
+<li>Connect with Java/React developers, engineering managers and recruiters at your target companies.</li>
+</ul></div>
+<div class="card"><h4 style="margin-top:0">Naukri / Instahyre / Hirist</h4><ul class="plain">
+<li>Resume headline full of keywords.</li>
+<li>Key skills: add all the relevant tech (up to the limit).</li>
+<li>Update the profile every 2–3 days (it pushes you up recruiter searches).</li>
+<li>Fill in notice period and expected CTC honestly.</li>
+<li>Set job alerts for the titles above.</li>
+</ul></div>
+</div>
+
+<h3>Referral message template</h3>
+<div class="script">Hi [Name], I'm [Your name], a software professional with about a year of experience, moving into Java full stack development. I've built [ShopSphere: an e-commerce platform on Spring Boot microservices with Kafka and a React frontend] (link). I saw the [Job title, Job ID] role on your team and I think my skills are a good fit. Would you be open to referring me? I've attached my resume. Thanks a lot for your time!</div>
+
+<h3>Weekly application system</h3>
+<div class="card"><ul class="plain">
+<li><b>10–15 targeted applications per week</b> (resume tweaked to each job description's keywords) rather than 100 untargeted ones.</li>
+<li><b>5 referral requests per week</b> on LinkedIn. Referrals get far more callbacks than cold applications.</li>
+<li>Track everything in a sheet: company, role, date, source, referral (Y/N), status, next step, follow-up date.</li>
+<li>Follow up once after 7–10 days.</li>
+<li>After every interview, write down every question you were asked and add the weak ones to your revision list.</li>
+<li>Expect a typical process: online test (DSA/MCQ) → technical round 1 (Java + Spring) → technical round 2 (projects + design/SQL/React) → manager round → HR.</li>
+</ul></div>
+
+<h3>Optional certifications (nice to have, not required)</h3>
+<div class="card"><ul class="plain">
+<li>Oracle Certified Professional: Java SE 17 (1Z0-829) or Java SE 21 (1Z0-830) Developer</li>
+<li>Spring Certified Professional (VMware/Broadcom)</li>
+<li>AWS Certified Cloud Practitioner → Developer Associate</li>
+<li>Professional Scrum Master I (PSM I), useful for Agile questions</li>
+</ul><p class="intro">Projects and interview skills matter much more than certificates. Do a certificate only if it fits into your schedule without delaying the projects.</p></div>
+
+<h3>Offer stage</h3>
+<div class="card"><ul class="plain">
+<li>Research salary ranges on AmbitionBox, Glassdoor and Levels.fyi for the exact role and city.</li>
+<li>A switch is usually a good time for a raise. Give a researched range, not one number.</li>
+<li>Compare the learning (tech stack, mentoring, code quality), not just the CTC. Your first dev role sets your next 5 years.</li>
+<li>Don't resign before you have a written offer letter. Plan around your notice period.</li>
+</ul></div>
+</section>
+
+<!-- ================= SWITCH STORY ================= -->
+<section class="tab" id="story" data-label="🎤 The Switch Story">
+<h2>How to talk about the switch in interviews</h2>
+<div class="tip"><b>The core frame:</b> "I'm not running away from my current role. I'm moving toward building software." Every answer should go <b>Past (what I learned) → Present (what I've built to prove it) → Future (why this role)</b>.</div>
+
+<h3>Principles</h3>
+<div class="two">
+<div class="card do"><h4 style="margin-top:0">✅ Do</h4><ul class="plain">
+<li>Link your current skills to engineering: SQL, working with data, troubleshooting, production support, following processes.</li>
+<li>Back every claim with evidence: projects, GitHub, anything you automated.</li>
+<li>Sound sure: "I made a deliberate decision", not "I thought maybe I'd try".</li>
+<li>Keep the switch explanation under 60–90 seconds, then steer to your projects.</li>
+<li>Show you've started already (months of consistent learning and building).</li>
+</ul></div>
+<div class="card dont"><h4 style="margin-top:0">❌ Don't</h4><ul class="plain">
+<li>Criticise the current company, team, manager or the tool.</li>
+<li>Say your current work is "boring" or "I'm not learning anything".</li>
+<li>Make it sound like it's only about money.</li>
+<li>Apologise for your background; it gave you useful skills.</li>
+<li>Claim experience you don't have. Projects are projects; label them honestly.</li>
+</ul></div>
+</div>
+
+<h3>"Tell me about yourself" (60–90 seconds)</h3>
+<div class="script">I'm [Name]. I have about a year of experience, first as an intern and then full-time, working on a data reconciliation platform (IntelliMatch), where I [configured data-processing rules / investigated data issues with SQL / supported daily production runs]. That gave me solid SQL skills and a habit of being careful about data quality and edge cases.<br><br>Working with these systems every day, I realised the part I enjoyed most was understanding how software is built and automating things, so over the last [N] months I've been seriously building my skills in Java, Spring Boot, React and Kafka. I've built ShopSphere, an e-commerce platform that started as a Spring Boot monolith and grew into microservices with Kafka-based order processing, a React storefront, and Docker, Kubernetes and CI/CD.<br><br>I'm now looking for a Java full stack role where I can build and own features end to end and keep growing as an engineer.</div>
+
+<h3>"Why are you switching to development?"</h3>
+<div class="script">In my current role I work with an existing product: configuring it, running it and fixing data issues. Over time I became more interested in how such systems are designed and built than in operating them. When I started writing SQL and small automations, I found I enjoyed the building part most. So I made a deliberate plan: I learned Java and Spring Boot properly and built real projects to make sure this is what I want, and it is. Development lets me create things and solve problems at the root.</div>
+
+<h3>"Why switch so early in your career?"</h3>
+<div class="script">Because early is the best time to do it. The first few years set your technical foundation, and I'd rather build mine as an engineer now than switch after 5 years, when it's much harder and costlier for both me and an employer. I'm not starting from zero either: a year in a professional IT environment taught me SQL, production discipline, working with deadlines and teams. Getting clarity early is an advantage, not a risk.</div>
+
+<h3>"You have no professional development experience. Why should we hire you?"</h3>
+<div class="script">That's fair. I haven't been a developer by title yet. What I can show is (1) projects that go beyond tutorials, using the same stack your team uses: Spring Boot, React, Kafka, microservices and tests; (2) a year of professional experience, so I know how real teams, processes and production systems work; and (3) proof I learn fast and consistently, since I built all this while working full-time. I'd be happy to walk you through any part of my code.</div>
+
+<h3>"Isn't this a step back for you?" / "Will you accept a junior role?"</h3>
+<div class="script">I see it as a step forward in direction. I'm comfortable starting at an associate or SDE-1 level, because the role and the learning matter more to me right now than the title. My professional experience should help me ramp up faster once I'm in.</div>
+
+<h3>"You've only been in your current job about 6 months. Will you leave us quickly too?"</h3>
+<div class="script">This move is the opposite of job-hopping. I'm switching career tracks, not hopping between similar jobs. I took my time to be sure, spent months building skills and projects, and I'm choosing a role I want to grow in for the long term. My plan is to go deep as an engineer here.</div>
+
+<h3>"What from your current role helps you as a developer?"</h3>
+<div class="card"><ul class="plain">
+<li><b>SQL depth:</b> joins, aggregations and finding missing or mismatched records across large datasets.</li>
+<li><b>Data quality mindset:</b> small data errors cause big problems, so I code defensively and validate inputs.</li>
+<li><b>Edge-case thinking:</b> duplicates, partial data, timing issues, bad input files.</li>
+<li><b>Production mindset:</b> SLAs, incident handling, root-cause analysis, clear communication during issues.</li>
+<li><b>Teamwork & process:</b> working with other teams, tickets, deadlines and documentation.</li>
+</ul></div>
+
+<h3>"How do you know you'll enjoy development?"</h3>
+<div class="script">I tested it before deciding. I built ShopSphere step by step from a plain Java library to a deployed microservices platform, including the hard parts: debugging Kafka consumers, handling concurrent orders without overselling, writing tests and setting up Docker and CI. I enjoyed even the frustrating parts, and I kept going consistently for [N] months alongside a full-time job. That's what convinced me.</div>
+
+<h3>Questions to ask the interviewer</h3>
+<div class="card"><ul class="plain">
+<li>What does the first 3 months look like for a new engineer on this team?</li>
+<li>What's your tech stack and how do you deploy (CI/CD, cloud, Kubernetes)?</li>
+<li>How are code reviews and mentoring done for junior engineers?</li>
+<li>What's a recent technical challenge the team solved?</li>
+<li>How do you measure success for someone in this role after 6 months?</li>
+</ul></div>
+
+<h3>Salary and notice period answers</h3>
+<div class="card"><ul class="plain">
+<li><b>Expected CTC:</b> "Based on my research for this role and my experience, I'm looking at a range of X–Y. I'm flexible for the right learning opportunity." (Research the range first.)</li>
+<li><b>Notice period:</b> state it plainly, and mention whether it can be bought out or shortened.</li>
+<li><b>Current CTC:</b> answer honestly. Don't inflate it; it gets checked against payslips.</li>
+</ul></div>
+</section>
+
+<!-- ================= INTERVIEW QUESTIONS ================= -->
+<section class="tab" id="iq" data-label="❓ Interview Q&A">
+<h2>Interview question bank</h2>
+<p class="intro">Standard questions for Java full stack interviews at 0–3 years, with short answer pointers. Tap a question to see its key points, then practise saying the full answer out loud. For behavioural questions use <b>STAR</b>: Situation → Task → Action → Result.</p>
+<input class="search" id="qsearch" placeholder="Search questions… (e.g. HashMap, Kafka, useEffect)">
+<div class="qa" id="qa"></div>
+</section>
+
+<footer>Guide made in November 2026. Check versions and job-market details as they change. Good luck! 🚀</footer>
+</main>
+
+<script>
+function yt(q){return "https://www.youtube.com/results?search_query="+encodeURIComponent(q)}
+
+// ---------- RESOURCES (name, url, note, tag) ----------
+var R={
+start:[
+["roadmap.sh: Java","https://roadmap.sh/java","Visual Java developer roadmap","Free"],
+["roadmap.sh: Spring Boot","https://roadmap.sh/spring-boot","Spring Boot skill map","Free"],
+["roadmap.sh: React","https://roadmap.sh/react","React roadmap","Free"],
+["roadmap.sh: Full Stack","https://roadmap.sh/full-stack","Full stack overview","Free"],
+["roadmap.sh: Software Design & Architecture","https://roadmap.sh/software-design-architecture","Design principles and patterns map","Free"],
+["Baeldung","https://www.baeldung.com","Best written tutorials for Java & Spring. Use for any topic","Free"]
+],
+java:[
+["dev.java: Learn","https://dev.java/learn/","Official modern Java tutorials from Oracle","Free"],
+["MOOC.fi Java Programming","https://java-programming.mooc.fi/","University of Helsinki course with hundreds of auto-graded exercises","Free"],
+["Oracle Java Tutorials","https://docs.oracle.com/javase/tutorial/","Classic reference for the basics (older Java, still solid)","Free"],
+["Baeldung: Java","https://www.baeldung.com/get-started-with-java-series","Topic-by-topic articles","Free"],
+["Exercism Java track","https://exercism.org/tracks/java","Practice exercises with mentor feedback","Free"],
+["Telusko: Java","https://www.youtube.com/results?search_query=Telusko+Java+full+course","Beginner-friendly Java course","YouTube"],
+["Kunal Kushwaha: Java + DSA","https://www.youtube.com/results?search_query=Kunal+Kushwaha+Java+DSA+bootcamp","Java plus DSA bootcamp, in depth","YouTube"],
+["Head First Java (3rd ed.)","https://www.oreilly.com/library/view/head-first-java/9781492091646/","Fun, visual intro to OOP & Java","Book"],
+["Effective Java (3rd ed.), Joshua Bloch","https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/","Must-read for writing professional Java","Book"]
+],
+advjava:[
+["Java Concurrency in Practice, Goetz","https://jcip.net/","The concurrency classic","Book"],
+["Jenkov: Java Concurrency","https://jenkov.com/tutorials/java-concurrency/index.html","Clear free concurrency tutorials","Free"],
+["Baeldung: Concurrency series","https://www.baeldung.com/java-concurrency","Executors, locks, CompletableFuture…","Free"],
+["Inside Java","https://inside.java/","Official news on JVM and language features","Free"],
+["OpenJDK JEPs","https://openjdk.org/jeps/0","Read the JEP for each new feature (Java 21, 25)","Free"],
+["Defog Tech: Concurrency","https://www.youtube.com/results?search_query=Defog+Tech+Java+concurrency","Short, sharp concurrency videos","YouTube"],
+["Java Brains: Java features","https://www.youtube.com/results?search_query=Java+Brains+Java+21+features","Modern Java explained","YouTube"],
+["Modern Java in Action","https://www.manning.com/books/modern-java-in-action","Streams, lambdas, CompletableFuture in depth","Book"]
+],
+sql:[
+["SQLBolt","https://sqlbolt.com/","Interactive SQL basics","Free"],
+["Mode SQL Tutorial","https://mode.com/sql-tutorial/","Basic → advanced incl. window functions","Free"],
+["PostgreSQL Exercises","https://pgexercises.com/","Practice joins, aggregates, recursive queries","Free"],
+["LeetCode SQL 50","https://leetcode.com/studyplan/top-sql-50/","Interview-style SQL problems","Free"],
+["DataLemur SQL","https://datalemur.com/","Real company SQL interview questions","Free"],
+["Use The Index, Luke","https://use-the-index-luke.com/","Indexing & query performance explained","Free"],
+["PostgreSQL docs: Tutorial","https://www.postgresql.org/docs/current/tutorial.html","Official reference","Free"],
+["CMU Intro to Database Systems","https://www.youtube.com/results?search_query=CMU+Intro+to+Database+Systems+Andy+Pavlo","How databases work internally (advanced)","YouTube"]
+],
+spring:[
+["Spring Guides","https://spring.io/guides","Official 15-minute hands-on guides","Free"],
+["Spring Boot Reference","https://docs.spring.io/spring-boot/index.html","Official documentation","Free"],
+["Spring Academy","https://spring.academy/courses","Free official courses (Spring Boot, Spring Security…)","Free"],
+["Baeldung: Spring","https://www.baeldung.com/spring-tutorial","Huge library of Spring articles","Free"],
+["Dan Vega (Spring Developer Advocate)","https://www.youtube.com/results?search_query=Dan+Vega+Spring+Boot","Up-to-date Spring Boot 3/4 videos","YouTube"],
+["Amigoscode: Spring Boot","https://www.youtube.com/results?search_query=Amigoscode+Spring+Boot+full+course","Project-based full courses","YouTube"],
+["Java Brains: Spring","https://www.youtube.com/results?search_query=Java+Brains+Spring+Boot","Clear concept explanations","YouTube"],
+["Spring Start Here, Laurențiu Spilcă","https://www.manning.com/books/spring-start-here","Best beginner book on Spring fundamentals","Book"],
+["Spring Security in Action (2nd ed.)","https://www.manning.com/books/spring-security-in-action-second-edition","Security deep dive","Book"],
+["Spring in Action, Craig Walls","https://www.manning.com/books/spring-in-action-sixth-edition","Broad Spring coverage","Book"]
+],
+frontend:[
+["MDN Web Docs","https://developer.mozilla.org/en-US/docs/Learn","The reference for HTML, CSS, JS","Free"],
+["javascript.info","https://javascript.info/","Best free modern JavaScript tutorial","Free"],
+["react.dev: Learn","https://react.dev/learn","Official React docs (hooks-first)","Free"],
+["Full Stack Open","https://fullstackopen.com/en/","Univ. of Helsinki: React, Node, TypeScript, testing","Free"],
+["TypeScript Handbook","https://www.typescriptlang.org/docs/handbook/intro.html","Official TS guide","Free"],
+["The Odin Project","https://www.theodinproject.com/","Project-based web dev curriculum","Free"],
+["Flexbox Froggy","https://flexboxfroggy.com/","Learn flexbox by playing","Free"],
+["Grid Garden","https://cssgridgarden.com/","Learn CSS grid by playing","Free"],
+["Namaste JavaScript, Akshay Saini","https://www.youtube.com/results?search_query=Namaste+JavaScript+Akshay+Saini","JS internals: closures, event loop, hoisting","YouTube"],
+["Web Dev Simplified","https://www.youtube.com/results?search_query=Web+Dev+Simplified+React+hooks","Short React/JS concept videos","YouTube"],
+["TanStack Query docs","https://tanstack.com/query/latest","Server-state fetching for React","Free"],
+["Vite","https://vite.dev/guide/","How to start React projects today","Free"]
+],
+micro:[
+["microservices.io, Chris Richardson","https://microservices.io/patterns/index.html","Pattern language: saga, outbox, CQRS…","Free"],
+["Martin Fowler: Microservices","https://martinfowler.com/microservices/","Foundational articles","Free"],
+["Spring Cloud","https://spring.io/projects/spring-cloud","Gateway, Config, OpenFeign, Circuit Breaker","Free"],
+["Resilience4j docs","https://resilience4j.readme.io/docs","Circuit breaker, retry, rate limiter","Free"],
+["The Twelve-Factor App","https://12factor.net/","Principles for cloud-native services","Free"],
+["OpenTelemetry docs","https://opentelemetry.io/docs/","Distributed tracing standard","Free"],
+["Amigoscode: Microservices","https://www.youtube.com/results?search_query=Amigoscode+microservices+spring+boot","Build microservices with Spring","YouTube"],
+["ByteByteGo","https://www.youtube.com/results?search_query=ByteByteGo+microservices","Visual architecture explainers","YouTube"],
+["Building Microservices (2nd ed.), Sam Newman","https://samnewman.io/books/building_microservices_2nd_edition/","The standard book","Book"],
+["Microservices Patterns, Chris Richardson","https://www.manning.com/books/microservices-patterns","Patterns in Java, in depth","Book"]
+],
+kafka:[
+["Apache Kafka Quickstart","https://kafka.apache.org/quickstart","Run Kafka locally (KRaft)","Free"],
+["Apache Kafka Documentation","https://kafka.apache.org/documentation/","Official reference: design section is gold","Free"],
+["Confluent Developer courses","https://developer.confluent.io/courses/","Free Kafka 101, Spring + Kafka, Streams","Free"],
+["Spring for Apache Kafka reference","https://docs.spring.io/spring-kafka/reference/","KafkaTemplate, listeners, retries, DLT","Free"],
+["Conduktor Kafkademy","https://learn.conduktor.io/kafka/","Beginner-friendly Kafka lessons","Free"],
+["Kafka: The Definitive Guide (2nd ed.)","https://www.confluent.io/resources/kafka-the-definitive-guide-v2/","Free e-book from Confluent","Book"],
+["Debezium","https://debezium.io/documentation/","Change data capture into Kafka (outbox)","Free"],
+["Kafka tutorials (videos)","https://www.youtube.com/results?search_query=Apache+Kafka+Spring+Boot+tutorial","Spring Boot + Kafka walkthroughs","YouTube"]
+],
+devops:[
+["Pro Git book","https://git-scm.com/book/en/v2","Complete Git book, free","Free"],
+["Learn Git Branching","https://learngitbranching.js.org/","Visual, interactive Git practice","Free"],
+["Docker: Get Started","https://docs.docker.com/get-started/","Official Docker tutorial","Free"],
+["Kubernetes Tutorials","https://kubernetes.io/docs/tutorials/","Official K8s basics","Free"],
+["GitHub Actions docs","https://docs.github.com/en/actions","CI/CD pipelines","Free"],
+["AWS Skill Builder","https://skillbuilder.aws/","Free AWS training, incl. Cloud Practitioner","Free"],
+["The Missing Semester (MIT)","https://missing.csail.mit.edu/","Shell, Git, tools every dev needs","Free"],
+["Linux Journey","https://linuxjourney.com/","Learn Linux basics","Free"],
+["TechWorld with Nana","https://www.youtube.com/results?search_query=TechWorld+with+Nana+Docker+Kubernetes","Docker, K8s, CI/CD explained clearly","YouTube"],
+["roadmap.sh: DevOps","https://roadmap.sh/devops","Know what's out there","Free"]
+],
+testing:[
+["JUnit 5 User Guide","https://junit.org/junit5/docs/current/user-guide/","Official JUnit docs","Free"],
+["Mockito","https://site.mockito.org/","Mocking framework docs","Free"],
+["Testcontainers guides","https://testcontainers.com/guides/","Real DB/Kafka in tests","Free"],
+["Spring Boot testing docs","https://docs.spring.io/spring-boot/reference/testing/index.html","Test slices, MockMvc","Free"],
+["Practical Test Pyramid, Martin Fowler","https://martinfowler.com/articles/practical-test-pyramid.html","How to structure tests","Free"],
+["Testing Library (React)","https://testing-library.com/docs/react-testing-library/intro/","Frontend component tests","Free"],
+["Vitest","https://vitest.dev/guide/","Test runner for Vite/React","Free"],
+["Baeldung: Testing","https://www.baeldung.com/java-tests","JUnit, Mockito, AssertJ articles","Free"]
+],
+se:[
+["Agile Manifesto","https://agilemanifesto.org/","The 4 values & 12 principles","Free"],
+["The Scrum Guide","https://scrumguides.org/scrum-guide.html","Official Scrum definition (short!)","Free"],
+["Atlassian Agile Coach","https://www.atlassian.com/agile","Scrum, Kanban, user stories, estimation, Jira","Free"],
+["Refactoring Guru","https://refactoring.guru/design-patterns","Design patterns & code smells, with Java examples","Free"],
+["Google Engineering Practices","https://google.github.io/eng-practices/","How code review works at Google","Free"],
+["OWASP Top 10","https://owasp.org/www-project-top-ten/","Web security risks every dev must know","Free"],
+["Semantic Versioning","https://semver.org/","Versioning standard","Free"],
+["Conventional Commits","https://www.conventionalcommits.org/","Commit message standard","Free"],
+["Christopher Okhravi: Design Patterns","https://www.youtube.com/results?search_query=Christopher+Okhravi+design+patterns","Excellent pattern series","YouTube"],
+["Clean Code, Robert C. Martin","https://www.oreilly.com/library/view/clean-code-a/9780136083238/","Readable code habits","Book"],
+["Head First Design Patterns (2nd ed.)","https://www.oreilly.com/library/view/head-first-design/9781492077992/","Patterns in Java, beginner-friendly","Book"],
+["The Pragmatic Programmer","https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/","Professional habits","Book"]
+],
+dsa:[
+["NeetCode","https://neetcode.io/roadmap","NeetCode 150 roadmap with video solutions","Free"],
+["LeetCode","https://leetcode.com/problemset/","Practice platform","Free"],
+["takeUforward (Striver)","https://takeuforward.org/","Striver's SDE sheet & A2Z DSA, very popular in India","Free"],
+["System Design Primer","https://github.com/donnemartin/system-design-primer","Free HLD study guide","Free"],
+["Concept && Coding: LLD in Java","https://www.youtube.com/results?search_query=Concept+and+Coding+low+level+design+java","LLD & machine coding in Java","YouTube"],
+["Gaurav Sen: System Design","https://www.youtube.com/results?search_query=Gaurav+Sen+system+design","Beginner-friendly HLD","YouTube"],
+["ByteByteGo: System Design","https://www.youtube.com/results?search_query=ByteByteGo+system+design","Visual system design explainers","YouTube"],
+["System Design Interview Vol. 1, Alex Xu","https://bytebytego.com/","Classic HLD interview book","Book"],
+["Designing Data-Intensive Applications","https://dataintensive.net/","Advanced, read after landing the job","Book"]
+],
+jobs:[
+["LinkedIn Jobs","https://www.linkedin.com/jobs/","Jobs + referrals + recruiter outreach","Free"],
+["Naukri","https://www.naukri.com/","Largest job board in India","Free"],
+["Instahyre","https://www.instahyre.com/","Recruiters reach out to you","Free"],
+["Hirist","https://www.hirist.tech/","Tech-only job board","Free"],
+["Cutshort","https://cutshort.io/","Startup & product roles","Free"],
+["Wellfound","https://wellfound.com/jobs","Startup jobs","Free"],
+["Foundit","https://www.foundit.in/","Large job board","Free"],
+["AmbitionBox","https://www.ambitionbox.com/","Salaries, reviews, interview questions (India)","Free"],
+["Glassdoor","https://www.glassdoor.co.in/","Company reviews & interview experiences","Free"],
+["Levels.fyi","https://www.levels.fyi/","Compensation data","Free"]
+]
+};
+
+// ---------- TOPICS ----------
+var T={
+java:{title:"Core Java",intro:"The foundation. Go deep here; most Java interviews spend 40–60% of the time on core Java.",groups:[
+["Setup & language basics",[
+["JDK vs JRE vs JVM; install JDK 21 (Eclipse Temurin), IntelliJ IDEA Community","How compilation works: .java → bytecode → JVM"],
+["Primitive types, wrapper classes, autoboxing, type casting","int vs Integer, Integer cache (-128 to 127)"],
+["Operators, control flow, loops, switch expressions",""],
+["Arrays (1D/2D), Arrays utility class",""],
+["Strings: immutability, string pool, StringBuilder vs StringBuffer, common methods, text blocks",""],
+["Packages, imports, classpath, the main method, var (local type inference)",""]]],
+["Object-Oriented Programming",[
+["Classes, objects, constructors, constructor chaining, this & super",""],
+["Encapsulation, inheritance, polymorphism, abstraction (the 4 pillars)","With real examples, not just definitions"],
+["Method overloading vs overriding, dynamic dispatch, covariant return types",""],
+["Abstract classes vs interfaces (default, static, private methods)",""],
+["static and final keywords; static blocks; access modifiers",""],
+["Inner, static nested, local and anonymous classes",""],
+["Object class methods: equals(), hashCode() contract, toString(), clone()","Critical interview topic"],
+["Immutable classes; composition vs inheritance",""],
+["Enums (with fields & methods), records, sealed classes",""]]],
+["Exception handling",[
+["Exception hierarchy: Throwable, Error, checked vs unchecked",""],
+["try-catch-finally, multi-catch, try-with-resources, AutoCloseable",""],
+["throw vs throws, custom exceptions, exception chaining",""],
+["Best practices: don't swallow exceptions, use specific exceptions, log properly",""]]],
+["Generics",[
+["Generic classes & methods, bounded types (<T extends Number>)",""],
+["Wildcards: ?, ? extends, ? super (PECS rule)",""],
+["Type erasure and its limitations",""]]],
+["Collections Framework",[
+["Collection hierarchy: List, Set, Queue, Deque, Map",""],
+["ArrayList vs LinkedList (internals & Big-O)",""],
+["HashSet, LinkedHashSet, TreeSet",""],
+["HashMap internals: hashing, buckets, collisions, treeification (Java 8+), load factor, resizing","Asked in almost every Java interview"],
+["LinkedHashMap (LRU cache), TreeMap, EnumMap, WeakHashMap, IdentityHashMap",""],
+["PriorityQueue (heap), ArrayDeque (stack/queue)",""],
+["Comparable vs Comparator; Comparator.comparing().thenComparing()",""],
+["Iterator, ListIterator; fail-fast vs fail-safe iterators",""],
+["Collections & Arrays utility methods; immutable collections (List.of, Map.of)",""],
+["Sequenced collections (Java 21): getFirst(), getLast(), reversed()",""]]],
+["Functional Java (Java 8+)",[
+["Lambda expressions & functional interfaces (Function, Predicate, Consumer, Supplier, BiFunction)",""],
+["Method references",""],
+["Streams API: map, filter, reduce, collect, sorted, distinct, limit, flatMap",""],
+["Collectors: groupingBy, partitioningBy, toMap, joining, counting, summingInt","Practise a lot: common live-coding questions"],
+["Lazy evaluation, intermediate vs terminal operations, parallel streams & their pitfalls",""],
+["Optional: correct usage and anti-patterns",""],
+["Date/Time API: LocalDate, LocalDateTime, Instant, ZonedDateTime, Duration, DateTimeFormatter","Time zones matter in real apps"]]],
+["I/O, JSON & build tools",[
+["File I/O, NIO.2 (Path, Files), reading CSV files",""],
+["Serialization basics; JSON with Jackson (ObjectMapper, annotations)",""],
+["BigDecimal for money (never double!), rounding modes","Needed for prices and any exact decimal maths"],
+["Maven: pom.xml, lifecycle, dependencies & scopes, plugins, multi-module",""],
+["Gradle basics (read and modify a build.gradle)",""]]]
+]},
+advjava:{title:"Advanced Java",intro:"What separates a Java developer from someone who knows Java syntax. Concurrency and JVM questions come up in most Java interviews.",groups:[
+["Multithreading & concurrency",[
+["Process vs thread; Thread, Runnable, Callable; thread lifecycle & states",""],
+["synchronized (methods/blocks), intrinsic locks, volatile, happens-before",""],
+["Java Memory Model, visibility & atomicity problems, race conditions",""],
+["wait/notify, producer-consumer problem",""],
+["Deadlock, livelock, starvation: causes and prevention",""],
+["Locks: ReentrantLock, ReadWriteLock, StampedLock, Condition",""],
+["Atomic classes (AtomicInteger, LongAdder), CAS",""],
+["ExecutorService, thread pools (fixed, cached, scheduled), ThreadPoolExecutor parameters",""],
+["Future, CompletableFuture (thenApply, thenCompose, allOf, exception handling)",""],
+["Concurrent collections: ConcurrentHashMap, CopyOnWriteArrayList, BlockingQueue",""],
+["Synchronizers: CountDownLatch, CyclicBarrier, Semaphore, Phaser",""],
+["ForkJoinPool & work stealing; ThreadLocal",""],
+["Virtual threads (Java 21): what they are, when to use, pinning","Hot topic in 2025–26 interviews"],
+["Structured concurrency & scoped values (newer Java)",""]]],
+["JVM internals & performance",[
+["Class loading: bootstrap, platform, application class loaders; delegation model",""],
+["JVM memory: heap (young/old), stack, metaspace, code cache",""],
+["Garbage collection: mark-sweep, generational GC, G1, ZGC; GC roots",""],
+["JIT compilation, bytecode basics (javap)",""],
+["Memory leaks in Java, OutOfMemoryError & StackOverflowError causes",""],
+["Profiling & diagnosis: heap dumps, thread dumps, VisualVM, JFR, JDK Mission Control",""],
+["Common JVM flags: -Xms, -Xmx, -XX:+UseG1GC",""]]],
+["Modern Java (17 → 21 → 25)",[
+["Records, sealed classes, pattern matching for instanceof",""],
+["Switch expressions & pattern matching for switch, record patterns",""],
+["Text blocks, enhanced NullPointerException messages",""],
+["Java 21: virtual threads, sequenced collections, record patterns",""],
+["Java 25: compact source files & instance main methods, flexible constructor bodies, scoped values, module imports",""],
+["Java modules (JPMS): awareness level",""]]],
+["Reflection, annotations & JDBC",[
+["Reflection API basics, how frameworks like Spring use it",""],
+["Built-in & custom annotations, retention policies",""],
+["Dynamic proxies (JDK proxy vs CGLIB): foundation of Spring AOP",""],
+["JDBC: DriverManager, Connection, PreparedStatement, ResultSet, batch updates",""],
+["Transactions in JDBC, connection pooling (HikariCP), SQL injection prevention",""],
+["Logging: SLF4J + Logback, log levels, structured logging, MDC",""]]]
+]},
+sql:{title:"SQL & Databases",intro:"You already use SQL at work. Make it excellent: SQL rounds are common and you can stand out here.",groups:[
+["Relational fundamentals",[
+["Tables, primary/foreign/composite/surrogate keys, constraints (UNIQUE, NOT NULL, CHECK)",""],
+["Normalization (1NF, 2NF, 3NF, BCNF) and when to denormalize",""],
+["ER modeling: one-to-one, one-to-many, many-to-many (join tables)",""]]],
+["Querying",[
+["SELECT, WHERE, ORDER BY, LIMIT/OFFSET, DISTINCT, LIKE, IN, BETWEEN",""],
+["Aggregates & GROUP BY, HAVING vs WHERE",""],
+["JOINs: inner, left, right, full outer, self, cross","Classic: find rows in A that are missing in B with LEFT JOIN … IS NULL"],
+["Subqueries, correlated subqueries, EXISTS vs IN",""],
+["CTEs (WITH), recursive CTEs (hierarchies)",""],
+["Window functions: ROW_NUMBER, RANK, DENSE_RANK, LAG/LEAD, running totals, PARTITION BY","Very common in interviews"],
+["CASE expressions, NULL handling (COALESCE, NULLIF), set operators (UNION, INTERSECT, EXCEPT)",""],
+["String & date functions",""]]],
+["DDL, DML & programmability",[
+["CREATE/ALTER/DROP; INSERT/UPDATE/DELETE; DELETE vs TRUNCATE vs DROP",""],
+["UPSERT (INSERT … ON CONFLICT / MERGE)",""],
+["Views, materialized views, stored procedures, functions, triggers",""]]],
+["Performance",[
+["Indexes: B-tree, composite, covering, unique; when an index is not used",""],
+["Clustered vs non-clustered indexes",""],
+["Reading EXPLAIN / EXPLAIN ANALYZE query plans",""],
+["Query optimization habits; keyset vs offset pagination; partitioning large tables",""]]],
+["Transactions & concurrency",[
+["ACID properties",""],
+["Isolation levels: read uncommitted, read committed, repeatable read, serializable",""],
+["Anomalies: dirty read, non-repeatable read, phantom read, lost update",""],
+["Locking: row/table locks, optimistic vs pessimistic, deadlocks; MVCC",""]]],
+["Beyond relational",[
+["PostgreSQL (learn this) and MySQL; awareness of Oracle (common in large enterprises)",""],
+["NoSQL types: document (MongoDB), key-value (Redis), wide-column (Cassandra)",""],
+["Redis for caching, sessions, rate limiting",""],
+["CAP theorem, SQL vs NoSQL tradeoffs",""]]]
+]},
+spring:{title:"Spring & Spring Boot",intro:"The heart of the backend. Learn how Spring works underneath (IoC, proxies, auto-configuration), not only the annotations.",groups:[
+["Spring Core",[
+["Inversion of Control & Dependency Injection (constructor vs setter vs field injection)",""],
+["ApplicationContext, BeanFactory, bean definition",""],
+["Stereotypes: @Component, @Service, @Repository, @Controller; @Configuration + @Bean",""],
+["@Autowired, @Qualifier, @Primary; resolving multiple beans",""],
+["Bean scopes (singleton, prototype, request, session) and bean lifecycle (@PostConstruct, @PreDestroy)",""],
+["Profiles, @Value, @ConfigurationProperties, externalized configuration",""],
+["Spring AOP: aspects, advice types, pointcuts, how proxies work",""],
+["Circular dependencies & how to avoid them",""]]],
+["Spring Boot",[
+["Spring Initializr, starters, project structure",""],
+["How auto-configuration works (@Conditional…, @SpringBootApplication breakdown)",""],
+["application.yml/properties, profiles, environment-specific config",""],
+["Embedded server, executable JAR, DevTools",""],
+["Actuator: health, metrics, info endpoints",""],
+["Logging configuration",""],
+["Boot 2 → 3 → 4 changes: javax → jakarta, Java 17 baseline, observability, native images (awareness)",""]]],
+["REST API development",[
+["@RestController, @RequestMapping/@GetMapping…, @PathVariable, @RequestParam, @RequestBody",""],
+["ResponseEntity & proper HTTP status codes",""],
+["DTOs vs entities; mapping with MapStruct",""],
+["Validation with Jakarta Bean Validation (@Valid, @NotNull, custom validators)",""],
+["Global exception handling: @RestControllerAdvice, ProblemDetail (RFC 9457)",""],
+["Pagination, sorting, filtering; API versioning strategies",""],
+["OpenAPI / Swagger UI with springdoc-openapi",""],
+["File upload/download (MultipartFile), CORS configuration",""],
+["Calling other APIs: RestClient, WebClient, OpenFeign",""],
+["Idempotency and REST best practices",""]]],
+["Data access: Spring Data JPA & Hibernate",[
+["JPA vs Hibernate vs Spring Data JPA",""],
+["Entities, @Id strategies, @Column, embeddables",""],
+["Relationships: @OneToOne, @OneToMany, @ManyToOne, @ManyToMany; owning side; cascade; orphanRemoval",""],
+["Fetch types (LAZY vs EAGER), LazyInitializationException",""],
+["N+1 problem & fixes: JOIN FETCH, @EntityGraph, batch size","Top interview question"],
+["Repositories: derived queries, @Query (JPQL & native), projections, Specifications",""],
+["Entity lifecycle states, persistence context, first-level & second-level cache",""],
+["@Transactional: propagation, isolation, rollback rules, self-invocation pitfall",""],
+["Optimistic locking (@Version), pessimistic locking",""],
+["Auditing (@CreatedDate, @LastModifiedBy); DB migrations with Flyway or Liquibase",""]]],
+["Spring Security",[
+["Authentication vs authorization; the SecurityFilterChain",""],
+["UserDetailsService, PasswordEncoder (BCrypt)",""],
+["Stateless JWT authentication end to end",""],
+["OAuth2 / OpenID Connect: resource server, login with Keycloak/Google",""],
+["Role- and method-level security (@PreAuthorize)",""],
+["CSRF, CORS, session vs token security; OWASP Top 10 basics",""]]],
+["More Spring features",[
+["Caching with @Cacheable + Redis",""],
+["Scheduling (@Scheduled) and async processing (@Async)",""],
+["Spring Batch: jobs, steps, readers/processors/writers, chunking","For large file imports and batch jobs"],
+["Application events (@EventListener)",""],
+["Spring WebFlux / reactive programming: awareness level",""]]]
+]},
+frontend:{title:"Frontend: Web + JavaScript + TypeScript + React",intro:"For a Java full stack role, React needs to be solid but not as deep as the backend. JavaScript fundamentals matter most.",groups:[
+["Web fundamentals",[
+["How the web works: HTTP/HTTPS, DNS, request/response, browser rendering",""],
+["HTML5: semantic tags, forms, accessibility basics (labels, alt text, ARIA)",""],
+["CSS: box model, specificity, positioning, flexbox, grid",""],
+["Responsive design, media queries, mobile-first",""],
+["Tailwind CSS (very common) and/or a component library (MUI, shadcn/ui)",""]]],
+["JavaScript (deep)",[
+["var/let/const, scope, hoisting, temporal dead zone",""],
+["Types, type coercion, == vs ===, truthy/falsy",""],
+["Functions, closures, this, call/apply/bind, arrow functions",""],
+["Prototypes, prototypal inheritance, classes",""],
+["Destructuring, spread/rest, template literals, optional chaining, nullish coalescing",""],
+["Array methods: map, filter, reduce, find, some, every, sort",""],
+["ES modules (import/export)",""],
+["Event loop, call stack, microtasks vs macrotasks","Common interview question"],
+["Callbacks → Promises → async/await; Promise.all/allSettled/race; error handling",""],
+["fetch API / axios; JSON",""],
+["DOM manipulation, events, bubbling/capturing, event delegation",""],
+["Debounce & throttle; localStorage/sessionStorage/cookies",""]]],
+["TypeScript",[
+["Basic types, interfaces vs type aliases, unions & intersections",""],
+["Generics, type narrowing, utility types (Partial, Pick, Omit, Record)",""],
+["Typing React props, state, events and API responses",""]]],
+["React core",[
+["Project setup with Vite; JSX; components & props",""],
+["State with useState; immutability of state",""],
+["useEffect: dependencies, cleanup, common mistakes",""],
+["Lists & keys, conditional rendering, events",""],
+["Forms: controlled vs uncontrolled; React Hook Form + Zod validation",""],
+["Lifting state up, component composition, children",""],
+["useRef, useReducer, useContext",""],
+["useMemo, useCallback, React.memo: when they actually help",""],
+["Custom hooks",""],
+["React Router: routes, params, nested routes, protected routes",""]]],
+["React in real apps",[
+["Data fetching & caching with TanStack Query (or axios + hooks)",""],
+["Global state: Context, Redux Toolkit or Zustand",""],
+["Authentication flow with a Spring Boot JWT backend; where to store tokens securely",""],
+["Error boundaries, Suspense, code splitting with lazy()",""],
+["React 19: Actions, use(), useOptimistic, form actions (awareness)",""],
+["Performance: avoiding unnecessary re-renders, React DevTools Profiler",""],
+["Testing: Vitest + React Testing Library",""],
+["Build & deploy: environment variables, Vercel/Netlify, serving via Nginx",""],
+["Next.js: awareness level (server components, routing)",""]]]
+]},
+micro:{title:"Microservices",intro:"Learn microservices after you can build a good monolith. Interviewers test whether you understand the trade-offs, not just the buzzwords.",groups:[
+["Concepts & design",[
+["Monolith vs modular monolith vs microservices: pros, cons, when not to use microservices",""],
+["Domain-Driven Design basics: bounded contexts, aggregates, ubiquitous language",""],
+["Service decomposition strategies (by business capability / subdomain)",""],
+["Database per service; shared-database anti-pattern",""],
+["Twelve-Factor App principles",""]]],
+["Communication",[
+["Synchronous: REST, gRPC (awareness); asynchronous: messaging/events",""],
+["API Gateway (Spring Cloud Gateway): routing, auth, rate limiting",""],
+["Service discovery (Eureka or Kubernetes DNS), client-side vs server-side load balancing",""],
+["OpenFeign / RestClient for service-to-service calls",""],
+["API contracts, versioning, backward compatibility",""]]],
+["Resilience",[
+["Timeouts, retries with exponential backoff & jitter",""],
+["Circuit breaker, bulkhead, rate limiter, fallbacks (Resilience4j)",""],
+["Idempotency keys & idempotent consumers",""],
+["Cascading failures and how to prevent them",""]]],
+["Data consistency patterns",[
+["Why distributed transactions / 2PC are avoided; eventual consistency",""],
+["Saga pattern: choreography vs orchestration, compensating transactions",""],
+["Transactional outbox pattern (+ CDC with Debezium)",""],
+["CQRS and event sourcing: concepts",""]]],
+["Operations & observability",[
+["Centralized config (Spring Cloud Config / K8s ConfigMaps), secrets management",""],
+["Centralized logging (ELK/Loki), correlation IDs",""],
+["Metrics with Micrometer + Prometheus + Grafana",""],
+["Distributed tracing with OpenTelemetry (Zipkin/Jaeger/Tempo)",""],
+["Health checks, readiness/liveness probes",""],
+["Service-to-service security: OAuth2 client credentials, mTLS awareness",""],
+["Deployment strategies: rolling, blue-green, canary",""]]]
+]},
+kafka:{title:"Apache Kafka & Event-Driven Systems",intro:"Kafka is used in most modern event-driven backends. Learn the core model really well (partitions, offsets, consumer groups, delivery guarantees).",groups:[
+["Messaging fundamentals",[
+["Point-to-point queues vs publish-subscribe",""],
+["Why event-driven architecture; events vs commands",""],
+["Kafka vs RabbitMQ vs ActiveMQ: when to use which",""]]],
+["Kafka core concepts",[
+["Brokers, cluster, topics, partitions, offsets, segments",""],
+["Replication, leader/follower, ISR, replication factor, min.insync.replicas",""],
+["KRaft mode (Kafka 4.x, no ZooKeeper)",""],
+["Retention (time/size) and log compaction",""]]],
+["Producers",[
+["Message keys & partitioning (ordering per key)",""],
+["acks (0, 1, all), retries, idempotent producer",""],
+["Batching, linger.ms, compression",""]]],
+["Consumers",[
+["Consumer groups, partition assignment, rebalancing",""],
+["Offset commits: auto vs manual; at-most-once / at-least-once / exactly-once",""],
+["Consumer lag & monitoring",""],
+["Ordering guarantees and their limits",""],
+["Handling duplicates: idempotent consumer design",""]]],
+["Data & schemas",[
+["Serialization: JSON, Avro, Protobuf",""],
+["Schema Registry & schema evolution (backward/forward compatibility)",""]]],
+["Spring for Apache Kafka",[
+["KafkaTemplate & @KafkaListener; configuration via Spring Boot",""],
+["Error handling: DefaultErrorHandler, retry topics, dead-letter topics (DLT)",""],
+["Kafka transactions & exactly-once in Spring",""],
+["Testing with EmbeddedKafka or Testcontainers",""]]],
+["Advanced ecosystem",[
+["Kafka Streams basics (stateless/stateful ops, KTable)",""],
+["Kafka Connect & CDC with Debezium",""],
+["Partition count choices, throughput tuning, monitoring tools",""],
+["Use cases: order events, notifications, activity tracking, log aggregation, real-time analytics",""]]]
+]},
+devops:{title:"DevOps, Git & Cloud",intro:"A full stack developer is expected to ship code: version control, containers, pipelines and basic cloud.",groups:[
+["Linux & tools",[
+["Shell basics: navigation, files, permissions, processes, pipes, grep, environment variables",""],
+["SSH, curl, reading logs on servers",""]]],
+["Git & collaboration",[
+["init, clone, add, commit, push, pull, branch, checkout/switch",""],
+["Merge vs rebase; resolving conflicts",""],
+["reset vs revert, stash, cherry-pick, reflog",""],
+["Pull requests & code review flow on GitHub/GitLab/Bitbucket",""],
+["Branching strategies: Git Flow vs trunk-based; Conventional Commits",""]]],
+["Containers",[
+["Docker concepts: image, container, layers, registry",""],
+["Writing a Dockerfile for Spring Boot (multi-stage builds, layered JARs)",""],
+["Docker Compose: app + Postgres + Kafka + Redis locally",""],
+["Volumes, networks, environment variables",""]]],
+["Kubernetes basics",[
+["Pods, Deployments, ReplicaSets, Services, Ingress",""],
+["ConfigMaps & Secrets, resource limits, probes",""],
+["Scaling & rolling updates; Helm: awareness",""]]],
+["CI/CD",[
+["CI/CD concepts: build → test → scan → deploy",""],
+["GitHub Actions workflow for a Maven + React project",""],
+["Jenkins: awareness (very common in large companies)",""],
+["Code quality gates: SonarQube",""]]],
+["Cloud (AWS focus)",[
+["Core services: EC2, S3, RDS, IAM, VPC basics",""],
+["Containers on AWS: ECS / EKS; serverless Lambda awareness",""],
+["CloudWatch logs & metrics",""],
+["Networking basics: load balancers, reverse proxy (Nginx), TLS/HTTPS",""]]]
+]},
+testing:{title:"Testing & Code Quality",intro:"Tests in your projects send a strong signal. Many junior candidates skip them, so this is an easy way to stand out.",groups:[
+["Foundations",[
+["Testing pyramid: unit, integration, end-to-end",""],
+["TDD basics: red → green → refactor",""],
+["What makes a good test (fast, isolated, deterministic, readable)",""]]],
+["Java testing",[
+["JUnit 5: annotations, assertions, lifecycle, @ParameterizedTest, @Nested",""],
+["AssertJ fluent assertions",""],
+["Mockito: mock vs spy, stubbing, verify, ArgumentCaptor, @InjectMocks",""],
+["When not to mock (don't mock what you don't own)",""]]],
+["Spring Boot testing",[
+["@SpringBootTest vs test slices (@WebMvcTest, @DataJpaTest)",""],
+["MockMvc for controller tests; @MockitoBean",""],
+["Testcontainers for real PostgreSQL & Kafka in tests",""],
+["API testing with Postman and REST Assured",""]]],
+["Frontend & beyond",[
+["Vitest + React Testing Library",""],
+["E2E testing: Playwright or Cypress (awareness)",""],
+["Performance/load testing: JMeter, Gatling (awareness)",""]]],
+["Code quality",[
+["Code coverage with JaCoCo (and why 100% isn't the goal)",""],
+["Static analysis: SonarQube/SonarLint, Checkstyle, SpotBugs",""],
+["Formatting & linting (Spotless, ESLint, Prettier)",""]]]
+]},
+se:{title:"Software Engineering Practices, Standards & Methodologies",intro:"How professional teams build software. You'll be asked about Agile, design principles and code reviews, and you'll use them from day one.",groups:[
+["SDLC & methodologies",[
+["SDLC phases: requirements, design, implementation, testing, deployment, maintenance",""],
+["Waterfall, V-model, iterative, Agile; DevOps culture",""],
+["Agile Manifesto: 4 values & 12 principles",""]]],
+["Scrum & Kanban",[
+["Scrum roles: Product Owner, Scrum Master, Developers",""],
+["Events: sprint planning, daily stand-up, sprint review, retrospective",""],
+["Artifacts: product backlog, sprint backlog, increment",""],
+["User stories (INVEST), acceptance criteria, Definition of Ready / Done",""],
+["Estimation: story points, planning poker, velocity, burndown charts",""],
+["Kanban: boards, WIP limits, flow",""],
+["SAFe: awareness (used by many large companies); Jira & Confluence usage",""]]],
+["Design principles",[
+["SOLID principles, each with a Java example","Very common interview question"],
+["DRY, KISS, YAGNI, separation of concerns",""],
+["Coupling & cohesion, composition over inheritance, Law of Demeter",""]]],
+["Design patterns (GoF)",[
+["Creational: Singleton, Factory Method, Abstract Factory, Builder, Prototype",""],
+["Structural: Adapter, Decorator, Facade, Proxy, Composite",""],
+["Behavioral: Strategy, Observer, Template Method, Command, Chain of Responsibility, State",""],
+["Patterns used inside Spring (Proxy, Template, Factory, Singleton, Observer)",""]]],
+["Architecture",[
+["Layered architecture (controller → service → repository)",""],
+["Clean / hexagonal (ports & adapters) architecture",""],
+["MVC, REST design guidelines, event-driven architecture",""],
+["Architecture Decision Records (ADRs)",""]]],
+["Clean code & collaboration",[
+["Naming, small functions, comments, readable code",""],
+["Code smells & refactoring techniques",""],
+["Code review: giving and receiving feedback, PR etiquette, small PRs",""],
+["Semantic versioning, changelogs, README & API documentation",""],
+["Writing good tickets, bug reports and commit messages",""]]],
+["Production engineering",[
+["Logging & error handling standards",""],
+["Security by design: OWASP Top 10, secrets management, least privilege",""],
+["Feature flags, environments (dev/QA/UAT/prod), release management",""],
+["Incident management, on-call, root-cause analysis, blameless postmortems","Use examples from your current production-support work"],
+["SLAs, SLOs, monitoring & alerting basics",""]]]
+]},
+dsa:{title:"DSA, Low-Level Design & System Design",intro:"For 0–3 year roles: easy-to-medium DSA, LLD/machine coding at product companies, and basic HLD awareness. Do 1 problem a day in Java from week 1.",groups:[
+["DSA foundations",[
+["Big-O time & space complexity",""],
+["Arrays & strings; hashing (HashMap/HashSet patterns)",""],
+["Two pointers, sliding window, prefix sums",""],
+["Stacks, queues, monotonic stack",""],
+["Linked lists (reverse, cycle, merge)",""],
+["Binary search and its variants",""],
+["Recursion & backtracking",""],
+["Sorting algorithms (merge sort, quick sort) & their complexities",""]]],
+["DSA intermediate",[
+["Trees: traversals, BST, height/diameter, LCA",""],
+["Heaps / priority queues: top-K problems",""],
+["Graphs: BFS, DFS, topological sort, union-find, Dijkstra (basic)",""],
+["Greedy & intervals",""],
+["Dynamic programming basics (1D/2D, knapsack, LIS, LCS)",""],
+["Target: NeetCode 150 or the Striver SDE sheet (~120–150 problems)",""]]],
+["Low-Level Design (LLD) / machine coding",[
+["UML class diagrams & sequence diagrams (basic)",""],
+["Applying SOLID + patterns to a design problem",""],
+["Practice: parking lot, library management, ATM, Splitwise, elevator, snake & ladder",""],
+["Practice: rate limiter, LRU cache, logger, in-memory key-value store",""],
+["Machine-coding round practice: build working code in 60–90 minutes",""]]],
+["High-Level Design (HLD) basics",[
+["Scalability: vertical vs horizontal, stateless services, load balancing",""],
+["Caching: Redis, CDN, cache strategies & invalidation",""],
+["Database replication, sharding, indexing at scale",""],
+["CAP theorem, consistency models",""],
+["Message queues, rate limiting, API gateway",""],
+["Practice designs: URL shortener, notification system, chat system, e-commerce checkout, ticket booking",""]]]
+]}
+};
+
+
+// ---------- MINI PROJECTS PER TAB: [name, level, what to build, skills practised] ----------
+var P={
+java:[
+["Library Management System (console)","Beginner","Books, members, borrow/return, fines, search by title/author. Save data to a CSV/JSON file so it survives restarts.","OOP, encapsulation, collections, exceptions, file I/O"],
+["Student Grade Analyser","Beginner","Read students and marks from a CSV and print reports: toppers per subject, averages, grade distribution, failing students, sorted rankings.","Streams, Collectors.groupingBy, Comparator, Optional"],
+["Inventory Manager with Maven + JUnit","Intermediate","Products, stock in/out, low-stock alerts, price in BigDecimal, sales history by date range. Build with Maven, write JUnit tests for every service method.","Maven, BigDecimal, Date/Time API, JUnit 5, clean design"],
+["Snake & Ladder / Tic-Tac-Toe game","Intermediate","Playable console game for 2–4 players with configurable board size. Design classes before coding.","OOP design, enums, records, interfaces, polymorphism"],
+["Mini JSON parser or expression calculator","Advanced","Parse a JSON string into Java Maps/Lists, or evaluate \"(2 + 3) * 4\" style expressions with custom exceptions for bad input.","Recursion, stacks, generics, custom exceptions"]
+],
+advjava:[
+["Multithreaded Web Crawler","Intermediate","Crawl from a start URL to depth N in parallel, avoid revisiting URLs, collect page titles. Compare a fixed thread pool vs virtual threads.","ExecutorService, ConcurrentHashMap, CompletableFuture, virtual threads"],
+["Build your own Thread Pool","Intermediate","Write a simple thread pool with a BlockingQueue, worker threads, shutdown and a rejection policy, then compare it with ThreadPoolExecutor.","wait/notify, BlockingQueue, thread lifecycle"],
+["Parallel Log Analyser","Intermediate","Process a large log file (generate 1 GB) in chunks across threads: count errors per hour, top endpoints, slowest requests. Measure the speed-up.","Fork/Join or executors, NIO Files, streams, benchmarking"],
+["Rate-limited API Aggregator","Advanced","Call 5 public APIs in parallel, combine the results, apply timeouts and a fallback when one is slow, and limit to N calls/second.","CompletableFuture (allOf, orTimeout), Semaphore, structured concurrency"],
+["Memory Leak & GC Lab","Advanced","Write a program that leaks memory (static map, unclosed resources), capture a heap dump, find the leak in VisualVM/Eclipse MAT, fix it and compare GC logs.","JVM memory, GC, JFR, heap/thread dumps"]
+],
+sql:[
+["Movie Booking Database Design","Beginner","Design tables for movies, theatres, screens, shows, seats, users, bookings. Draw the ER diagram, normalise to 3NF, add constraints.","Data modelling, keys, normalization, constraints"],
+["50-Query Challenge on a sample DB","Intermediate","Load a sample database (Chinook, Northwind or Pagila) into PostgreSQL and write 50 business queries: top customers, monthly revenue, best-selling items per category.","Joins, GROUP BY, CTEs, window functions"],
+["Index Tuning Lab","Advanced","Generate 1–5 million rows, run slow queries, read EXPLAIN ANALYZE, add the right indexes and record the before/after timings in a README.","Indexes, query plans, performance"],
+["Transactions & Locking Experiments","Advanced","Open two psql sessions and reproduce dirty reads, lost updates and deadlocks under different isolation levels. Document what you saw.","ACID, isolation levels, locking, MVCC"]
+],
+spring:[
+["URL Shortener API","Beginner","Shorten URLs, redirect, track click counts, set expiry. Validation, global error handling, Swagger docs, Redis cache for hot links.","Spring Boot, REST, validation, Redis caching, OpenAPI"],
+["Blog / CMS REST API","Intermediate","Users, posts, comments, tags; pagination, sorting, search; JPA relationships; Flyway migrations; JWT login with USER/ADMIN roles.","Spring Data JPA, N+1 fixes, Spring Security, JWT"],
+["Job Board API","Intermediate","Companies post jobs, candidates upload resumes (file upload) and apply, filters by skill/location, @Scheduled email digest of new jobs.","Multipart upload, Specifications, scheduling, email, @Async"],
+["Expense Splitter (Splitwise-style) API","Intermediate","Groups, shared expenses, equal/exact/percentage splits, balances and settle-up suggestions. Strong unit tests on the splitting logic.","Domain modelling, BigDecimal, @Transactional, testing"],
+["OAuth2 Login + Keycloak demo","Advanced","Secure an API as an OAuth2 resource server with Keycloak; add Google login in a client app; method-level security.","OAuth2/OIDC, Spring Security internals"]
+],
+frontend:[
+["Responsive Portfolio Website","Beginner","Your personal site in HTML + CSS (flexbox/grid), mobile-first, deployed on Netlify. Later, link all your projects here.","HTML, CSS, responsive design, accessibility"],
+["Weather App","Beginner","Search a city, show current weather + 5-day forecast from a free weather API, loading and error states, debounced search.","JavaScript, fetch, async/await, DOM, debounce"],
+["Kanban Board","Intermediate","React + TypeScript board with columns, add/edit/delete cards, drag and drop, filters, saved in localStorage.","useState, useReducer, Context, TypeScript"],
+["Movie Explorer","Intermediate","Search movies from a public movie API, infinite scroll, detail pages via React Router, favourites list, skeleton loaders.","React Router, TanStack Query, custom hooks"],
+["Admin Dashboard for your Spring API","Advanced","Login with JWT against your Blog/Job Board API, protected routes, tables with server-side pagination, charts, forms with React Hook Form + Zod, tests with React Testing Library.","Auth flow, forms, data fetching, testing"]
+],
+micro:[
+["Split the Blog API into services","Intermediate","Break your monolith into user, post and comment services + API gateway + service discovery + config server. Document the before and after.","Decomposition, Spring Cloud Gateway, Eureka, Config"],
+["Resilience Lab","Intermediate","Make one service slow/failing on purpose; add timeouts, retries, a circuit breaker and fallbacks with Resilience4j; show the behaviour in logs/metrics.","Resilience4j, failure handling"],
+["Observability Stack","Advanced","Add Micrometer metrics, Prometheus, Grafana dashboards, OpenTelemetry tracing and correlation IDs to your services; trace one request end to end.","Metrics, tracing, logging"],
+["Saga demo: Travel booking","Advanced","Book flight + hotel + car as separate services; if one fails, compensate the others. Build it once with choreography and once with an orchestrator.","Saga, compensating transactions, eventual consistency"]
+],
+kafka:[
+["Kafka CLI warm-up","Beginner","Run Kafka (KRaft) in Docker, create topics with several partitions, produce/consume from the CLI, test consumer groups and replay from offset 0.","Topics, partitions, offsets, consumer groups"],
+["Real-time Notification Service","Intermediate","Spring Boot producer publishes user events (signup, comment, like); a consumer sends emails, another pushes to the browser over WebSocket.","KafkaTemplate, @KafkaListener, WebSocket"],
+["Order Events with Retries & DLT","Intermediate","Order events where some messages fail on purpose: retry topics, a dead-letter topic, idempotent consumer (no duplicate processing), a re-processing endpoint.","Error handling, DLT, idempotency"],
+["Clickstream Analytics","Advanced","Simulate website clicks into Kafka; use Kafka Streams to compute top pages and active users per minute; show them live on a React chart.","Kafka Streams, windowing, real-time UI"],
+["CDC Search Sync","Advanced","Capture Postgres changes with Debezium into Kafka and keep an Elasticsearch/OpenSearch index in sync for product search.","Kafka Connect, Debezium, outbox/CDC"]
+],
+devops:[
+["Dockerize a full stack app","Beginner","Multi-stage Dockerfiles for your Spring Boot API and React app + Docker Compose with Postgres and Redis. One command starts everything.","Docker, Compose, networks, volumes"],
+["CI/CD Pipeline with GitHub Actions","Intermediate","On every PR: build, test, Sonar scan. On merge to main: build images, push to GitHub Container Registry, auto-deploy.","GitHub Actions, pipelines, registries"],
+["Kubernetes Deployment","Intermediate","Deploy the app to kind/minikube: Deployments, Services, Ingress, ConfigMaps, Secrets, probes, then scale replicas and do a rolling update.","Kubernetes basics"],
+["Deploy to AWS","Advanced","Run the backend on EC2 or ECS with RDS PostgreSQL, the frontend on S3 + CloudFront, logs in CloudWatch. Write down the setup steps and costs (stay on the free tier).","AWS EC2/ECS, RDS, S3, IAM"]
+],
+testing:[
+["TDD Katas","Beginner","Do the String Calculator, Bowling Game and Roman Numerals katas strictly test-first (red → green → refactor).","JUnit 5, TDD habit"],
+["Test-cover your Spring project","Intermediate","Take your Blog/Job Board API to 80%+ service coverage: unit tests with Mockito, @WebMvcTest for controllers, @DataJpaTest + Testcontainers for repositories, JaCoCo report in CI.","Mockito, test slices, Testcontainers, JaCoCo"],
+["API test suite","Intermediate","Write a Postman collection and a REST Assured suite covering happy paths, validation errors and auth failures; run it in CI.","API testing"],
+["End-to-end tests","Advanced","Playwright tests for login → create item → edit → delete in your React app, running against Docker Compose in CI.","E2E testing, CI"]
+],
+se:[
+["Run ShopSphere as Scrum","Beginner","Create a GitHub Projects or Jira board, write user stories with acceptance criteria, estimate in story points, work in 2-week sprints and keep short retro notes.","Scrum, user stories, estimation"],
+["Refactoring kata: Gilded Rose","Intermediate","Take this famously messy code, add tests first, then refactor it using SOLID and the Strategy pattern without changing behaviour.","Refactoring, SOLID, code smells"],
+["Design-pattern mini library","Intermediate","Implement 10 GoF patterns in Java with a realistic example and test for each (e.g. Builder for HTTP requests, Observer for events, Decorator for logging).","Design patterns"],
+["Contribute to open source","Advanced","Find a 'good first issue' in a Java/Spring or React project, follow its contribution guide, open a PR and respond to review comments.","Git workflow, code review, collaboration"],
+["Write ADRs & docs","Beginner","Add Architecture Decision Records, a proper README, API docs and a CONTRIBUTING guide to ShopSphere.","Documentation standards"]
+],
+dsa:[
+["LLD: Parking Lot","Intermediate","Multiple floors, vehicle types, spot allocation strategies, tickets and fees. Class diagram first, then working Java code with tests.","OOP design, Strategy/Factory patterns"],
+["LLD: LRU Cache + in-memory Key-Value store","Intermediate","LRU cache (HashMap + doubly linked list), then a thread-safe key-value store with TTL expiry and a simple command interface.","Data structures, concurrency"],
+["LLD: Rate Limiter","Advanced","Token bucket and sliding window implementations behind one interface, thread-safe, with tests; then a Redis version used by a Spring filter.","Algorithms, concurrency, design"],
+["HLD write-up: URL Shortener","Intermediate","A 2-page design doc: requirements, API, data model, ID generation, caching, scaling, diagrams. Then compare it with your Spring URL shortener mini project.","System design communication"],
+["Pathfinding Visualiser","Intermediate","A React app that animates BFS, DFS and Dijkstra on a grid. Fun to show, and it makes graph algorithms stick.","Graphs, BFS/DFS, React"]
+]
+};
+
+// ---------- INTERVIEW QUESTIONS ----------
+var Q=[
+["Core Java",[
+["JDK vs JRE vs JVM?","JDK = JRE + dev tools (javac, jdb). JRE = JVM + core libraries for running code. JVM = executes bytecode; platform-specific, which is what makes Java 'write once, run anywhere'."],
+["Is Java pass-by-value or pass-by-reference?","Always pass-by-value. For objects, the value passed is a copy of the reference, so you can mutate the object but not reassign the caller's variable."],
+["Why are Strings immutable? What is the String pool?","Security (class names, URLs, DB connection strings), thread safety, hashCode caching, and the String pool. Literals are interned in the pool; new String() creates a separate heap object."],
+["== vs equals()?","== compares references (or primitive values); equals() compares logical content as defined by the class. String, Integer etc. override equals."],
+["equals() and hashCode() contract? What breaks if you violate it?","Equal objects must have equal hashCodes. If you override equals without hashCode, HashMap/HashSet put 'equal' objects in different buckets, so lookups fail and you get duplicates."],
+["How does HashMap work internally?","Array of buckets. hash(key) → index = hash & (n-1). Collisions go into a linked list, which is converted to a red-black tree when a bucket has more than 8 entries (and capacity is at least 64). Default capacity 16, load factor 0.75; it resizes (doubles) and rehashes when exceeded. One null key is allowed. get/put are O(1) on average."],
+["HashMap vs Hashtable vs ConcurrentHashMap?","HashMap: not thread-safe, allows a null key/values. Hashtable: legacy, synchronizes every method (slow). ConcurrentHashMap: thread-safe with fine-grained locking/CAS per bucket, no nulls, much better concurrency."],
+["ArrayList vs LinkedList?","ArrayList: dynamic array, O(1) random access, amortized O(1) append, O(n) middle insert, cache-friendly. LinkedList: doubly linked, O(n) access, O(1) insert/remove at a known node. ArrayList is almost always the better choice."],
+["Comparable vs Comparator?","Comparable: natural order inside the class (compareTo), one per class. Comparator: external, many orderings possible, e.g. Comparator.comparing(Emp::getSalary).reversed()."],
+["Fail-fast vs fail-safe iterators?","Fail-fast (ArrayList, HashMap) throw ConcurrentModificationException if the collection is modified during iteration (modCount check). Fail-safe/weakly consistent (CopyOnWriteArrayList, ConcurrentHashMap) iterate over a snapshot or tolerate changes."],
+["Checked vs unchecked exceptions?","Checked (IOException, SQLException) must be handled or declared; they represent recoverable conditions. Unchecked (RuntimeException subclasses) usually signal programming errors. Spring's @Transactional rolls back on unchecked exceptions by default."],
+["final vs finally vs finalize?","final: constant / no override / no subclass. finally: block that always runs after try/catch (except on System.exit or a JVM crash). finalize: deprecated GC hook, never use it."],
+["Abstract class vs interface (Java 8+)?","Interface: contract, multiple inheritance of type, default/static/private methods, no instance state. Abstract class: can hold state & constructors, single inheritance. Use an interface for capability, an abstract class for shared base implementation."],
+["Overloading vs overriding? Can static methods be overridden?","Overloading: same name, different parameters, resolved at compile time. Overriding: subclass redefines an instance method, resolved at runtime. Static methods are hidden, not overridden."],
+["How do you create an immutable class?","final class, private final fields, no setters, initialize in the constructor, defensive copies of mutable fields (in and out). Or simply use a record (with care for mutable components)."],
+["String vs StringBuilder vs StringBuffer?","String is immutable. StringBuilder is mutable and not synchronized (fast). StringBuffer is mutable and synchronized (legacy). Use StringBuilder for building strings in loops."],
+["Intermediate vs terminal stream operations? What is lazy evaluation?","Intermediate (map, filter, sorted) return a stream and are lazy. Terminal (collect, forEach, reduce, count) trigger processing. Nothing runs until a terminal operation is called, and elements flow one by one through the pipeline."],
+["map vs flatMap?","map: one-to-one transform. flatMap: one-to-many, flattens Stream<List<T>> into Stream<T>."],
+["Stream coding: highest-paid employee in each department","emps.stream().collect(Collectors.groupingBy(Emp::getDept, Collectors.maxBy(Comparator.comparing(Emp::getSalary)))). Also practise: frequency of characters, second highest number, duplicates in a list, joining names."],
+["What are records and sealed classes?","Records: concise immutable data carriers (auto constructor, accessors, equals/hashCode/toString). Sealed classes: restrict which classes can extend them (permits); great with pattern-matching switch."],
+["How do you implement a thread-safe Singleton?","Enum singleton (best), the static holder idiom (lazy & thread-safe), or double-checked locking with a volatile instance. In Spring, beans are singletons per container anyway."],
+["Why use BigDecimal for money?","double/float are binary floating point, so 0.1 + 0.2 ≠ 0.3. BigDecimal gives exact decimal arithmetic with explicit scale and rounding. Create it with new BigDecimal(\"0.1\") or BigDecimal.valueOf, not new BigDecimal(0.1)."],
+["What does the static keyword mean?","It belongs to the class, not to instances: static fields are shared, static methods can't use 'this', static blocks run once when the class loads, static nested classes need no outer instance."]
+]],
+["Concurrency & JVM",[
+["Thread vs Runnable vs Callable?","Extending Thread couples the task to the thread. Runnable is a task with no result. Callable returns a result and can throw checked exceptions; it is used with ExecutorService and returns a Future."],
+["synchronized vs ReentrantLock?","synchronized: simple, auto-release, block-structured. ReentrantLock: tryLock with timeout, interruptible, fairness option, multiple Conditions; must unlock in finally."],
+["What does volatile do?","Guarantees visibility (reads/writes go to main memory) and ordering (happens-before) but not atomicity, so count++ is still unsafe. Use AtomicInteger for that."],
+["What is a deadlock and how do you prevent it?","Two or more threads wait forever for each other's locks. Prevent it with a consistent lock ordering, tryLock with timeouts, fewer nested locks and smaller lock scope. Detect it with a thread dump."],
+["Explain ExecutorService & thread pool parameters","Reuses threads instead of creating one per task. ThreadPoolExecutor: corePoolSize, maxPoolSize, keepAlive, work queue, rejection policy. Always shut down executors."],
+["CompletableFuture: how do you combine async calls?","supplyAsync → thenApply (transform), thenCompose (chain dependent async calls), thenCombine (two independent results), allOf (wait for all), exceptionally/handle (errors). Pass a custom executor for I/O work."],
+["How does ConcurrentHashMap achieve thread safety?","Java 8+: CAS for empty bins, synchronized on the first node of a bin for updates, volatile reads, so no global lock. Atomic helpers: compute, merge, putIfAbsent."],
+["What are virtual threads (Java 21)?","Lightweight threads managed by the JVM and mounted on a few carrier threads. Millions are possible; great for blocking I/O-heavy work (thread-per-request). Not faster for CPU-bound work. Spring Boot enables them with spring.threads.virtual.enabled=true."],
+["Implement producer-consumer","Use a BlockingQueue: the producer calls put(), the consumer calls take(), and blocking handles the coordination. You can also show the wait/notify version with a while-loop condition check."],
+["What are the JVM memory areas?","Heap (objects; young: eden + survivors, old gen), thread stacks (frames, local variables), metaspace (class metadata), code cache (JIT-compiled code), PC registers."],
+["How does garbage collection work? What is G1?","Objects unreachable from GC roots are collected. Generational: most objects die young, so minor GCs clean the young gen. G1 splits the heap into regions, collects the regions with the most garbage first and targets pause times. ZGC gives very low pause times."],
+["How would you diagnose an OutOfMemoryError or high CPU?","OOM: enable -XX:+HeapDumpOnOutOfMemoryError, analyse the dump in Eclipse MAT/VisualVM, look for large retained collections and leaks (static maps, unclosed resources). High CPU: take thread dumps (jstack) and find hot threads; use JFR for profiling."]
+]],
+["Spring & Spring Boot",[
+["What are IoC and Dependency Injection?","IoC: the container creates and wires objects instead of your code. DI: dependencies are supplied (constructor/setter/field) instead of created with new. Gives loose coupling, testability and configurability."],
+["Why is constructor injection preferred?","Dependencies can be final (immutable), they're obvious and required, it's easy to unit test without Spring, it fails fast on missing beans and it exposes circular dependencies."],
+["Bean scopes?","singleton (default, one per container), prototype (new each time), request, session, application (web). Watch out for injecting a prototype into a singleton."],
+["@Component vs @Bean?","@Component: class-level, picked up by component scanning. @Bean: method-level inside @Configuration, for third-party classes or custom construction logic."],
+["Two beans of the same type: how does Spring choose?","Use @Primary for a default, @Qualifier(\"name\") at the injection point, or inject a List/Map of all of them. Otherwise you get NoUniqueBeanDefinitionException."],
+["How does Spring Boot auto-configuration work?","@SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan. Auto-config classes listed in META-INF/spring/…AutoConfiguration.imports are applied conditionally (@ConditionalOnClass, @ConditionalOnMissingBean, @ConditionalOnProperty). Your own beans override them."],
+["What are starters?","Curated dependency bundles (spring-boot-starter-web, -data-jpa, -security) with compatible versions plus the matching auto-configuration."],
+["@Controller vs @RestController?","@RestController = @Controller + @ResponseBody, so return values are serialized to JSON instead of resolved as view names."],
+["How do you handle exceptions globally?","@RestControllerAdvice with @ExceptionHandler methods that return ProblemDetail/ResponseEntity with proper status codes. Keep error responses consistent; never leak stack traces."],
+["How does @Transactional work? What is the self-invocation problem?","Spring wraps the bean in a proxy that begins/commits/rolls back the transaction. Calling a @Transactional method from another method in the same class bypasses the proxy, so there is no transaction. By default it rolls back only on unchecked exceptions (use rollbackFor for checked ones)."],
+["Transaction propagation types?","REQUIRED (default: join or create), REQUIRES_NEW (suspend the current one, start a new one, e.g. audit logs), NESTED (savepoint), SUPPORTS, MANDATORY, NOT_SUPPORTED, NEVER."],
+["What is Spring AOP? Give real uses","Cross-cutting concerns applied through proxies: logging, @Transactional, security, caching, metrics. Concepts: aspect, advice (before/after/around), pointcut, join point."],
+["Explain the Spring Security JWT flow","Login → authenticate credentials → issue a signed JWT (claims, expiry). Client sends Authorization: Bearer <token>. A filter (or OAuth2 resource server) validates the signature/expiry, builds the Authentication and puts it in the SecurityContext. Stateless, no session."],
+["What does Spring Boot Actuator give you?","Production endpoints: /health, /metrics, /info, /env, /loggers, /prometheus. Secure them and expose only what's needed."],
+["How do you call another microservice from Spring Boot?","RestClient (sync, modern), WebClient (reactive/async), OpenFeign (declarative interface), with timeouts, retries and a circuit breaker."],
+["How do profiles and externalized config work?","application-{profile}.yml plus spring.profiles.active. Property precedence: command line > environment variables > profile files > application.yml. Bind config with @ConfigurationProperties."],
+["What changed from Spring Boot 2 to 3/4?","javax.* → jakarta.* namespace, Java 17 minimum, Micrometer observability, native image support, ProblemDetail, RestClient. Boot 4 (Spring Framework 7) continues modernisation; most companies are on 3.x."],
+["Circular dependency: what is it and how do you fix it?","Bean A needs B and B needs A. Fix it by redesigning (extract a third component), using events or setter injection with @Lazy as a last resort. Boot disallows circular references by default."]
+]],
+["JPA / Hibernate",[
+["JPA vs Hibernate vs Spring Data JPA?","JPA: specification. Hibernate: an implementation of JPA (ORM). Spring Data JPA: repository abstraction on top of JPA that generates queries."],
+["What is the N+1 problem and how do you fix it?","Loading N parents and then lazily loading children runs 1 + N queries. Fix it with JOIN FETCH, @EntityGraph, batch fetching (@BatchSize / default_batch_fetch_size) or DTO projections."],
+["Lazy vs eager loading? LazyInitializationException?","LAZY loads on access (default for collections), EAGER loads immediately. Touching a lazy field after the session/transaction has closed throws the exception. Fix it with fetch joins or DTOs inside the transaction, not with open-in-view hacks."],
+["Entity lifecycle states?","Transient (new, not managed), Managed/persistent (in the persistence context, changes are auto-flushed), Detached (the context closed), Removed."],
+["First-level vs second-level cache?","First-level: per persistence context/transaction, always on. Second-level: shared across sessions, optional (Ehcache/Caffeine/Redis), good for read-mostly data."],
+["How does optimistic locking work?","A @Version column is checked on update. If someone else updated the row first, an OptimisticLockException is thrown and you retry or inform the user. No DB locks are held."],
+["Cascade types & orphanRemoval?","Cascade propagates operations (PERSIST, MERGE, REMOVE, ALL) from parent to child. orphanRemoval deletes a child removed from the parent's collection."],
+["save() vs saveAndFlush()? What is dirty checking?","save puts the entity in the persistence context and the flush happens at commit. saveAndFlush flushes immediately. Dirty checking: managed entities' changes are detected and written automatically at flush, with no explicit update call."]
+]],
+["REST APIs",[
+["What makes an API RESTful?","Resources identified by URIs, standard HTTP methods, stateless requests, representations (JSON), proper status codes, cacheability, a uniform interface (plus HATEOAS in theory)."],
+["PUT vs PATCH vs POST?","POST: create / non-idempotent action. PUT: full replace, idempotent. PATCH: partial update. DELETE: idempotent."],
+["What does idempotent mean? How do you make POST idempotent?","Repeating the request has the same effect as doing it once. Use an Idempotency-Key header stored with the result; duplicates return the stored response. Critical for checkouts and payments."],
+["Key status codes?","200 OK, 201 Created, 204 No Content, 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found, 409 Conflict, 422 Unprocessable, 429 Too Many Requests, 500 Server Error, 503 Unavailable."],
+["How do you version APIs?","URI (/api/v1/...), header, or media type. URI versioning is the simplest and most common; keep backward compatibility."],
+["How do you design pagination?","page/size with sorting (Spring Pageable) or cursor/keyset pagination for large or changing datasets. Return metadata (total, next cursor)."],
+["How do you secure a REST API?","HTTPS, authentication (JWT/OAuth2), authorization checks, input validation, rate limiting, CORS config, no sensitive data in logs/URLs, OWASP Top 10."]
+]],
+["Microservices",[
+["Monolith vs microservices: when would you NOT use microservices?","Microservices give independent deploys/scaling and team autonomy, at the cost of distributed complexity, network failures, data consistency and ops overhead. Small teams or unclear domains: start with a modular monolith."],
+["How do microservices communicate?","Synchronously (REST/gRPC) when an immediate answer is needed; asynchronously (Kafka/RabbitMQ events) for decoupling, resilience and spikes. Prefer async between domains."],
+["What does an API gateway do?","A single entry point: routing, authentication, rate limiting, SSL termination, aggregation, CORS. E.g. Spring Cloud Gateway."],
+["Explain service discovery","Services register their location, and clients look them up instead of using hard-coded hosts. Eureka (Spring Cloud) or Kubernetes Services/DNS."],
+["What is a circuit breaker?","Wraps remote calls. After the failure threshold is reached it opens (fails fast, with a fallback); after a wait it goes half-open and tests with a few calls; it closes on success. Prevents cascading failures (Resilience4j)."],
+["Explain the Saga pattern","Manages a business transaction across services without 2PC: a sequence of local transactions, each publishing an event; on failure, compensating transactions undo earlier steps. Choreography (events) or orchestration (a central coordinator)."],
+["What is the transactional outbox pattern?","Write the business data and an 'outbox' event row in the same DB transaction; a relay/CDC (Debezium) publishes outbox rows to Kafka. Avoids the dual-write problem (DB committed but message lost, or the reverse)."],
+["How do you maintain data consistency across services?","Database per service + eventual consistency via events, sagas, the outbox, idempotent consumers and reconciliation jobs."],
+["How do you trace a request across services?","Correlation/trace IDs propagated in headers (W3C traceparent), OpenTelemetry/Micrometer Tracing, viewed in Zipkin/Jaeger/Tempo; logs include the trace ID."],
+["What happens when a downstream service is slow or down?","Timeouts, retries with backoff (only for idempotent operations), a circuit breaker, a fallback/cached response, bulkheads, async queues to absorb the load, and alerts."]
+]],
+["Kafka",[
+["Explain topics, partitions and offsets","A topic is a named log split into partitions (ordered, append-only). Each record has an offset within its partition. Partitions enable parallelism and are replicated across brokers."],
+["How do consumer groups work?","Each partition is consumed by exactly one consumer in a group, so consumers beyond the partition count sit idle. Different groups each get all the messages (pub-sub)."],
+["How does Kafka guarantee ordering?","Only within a partition. Use the same key (e.g. accountId) to send related events to the same partition."],
+["acks=0/1/all?","0: fire-and-forget. 1: the leader wrote it. all: all in-sync replicas wrote it (the safest, combined with min.insync.replicas=2)."],
+["Delivery semantics: at-most-once, at-least-once, exactly-once?","At-most: commit before processing (may lose data). At-least: commit after processing (may duplicate, the most common choice). Exactly-once: idempotent producer + transactions (read-process-write within Kafka) or idempotent consumers on the sink side."],
+["How do you handle duplicate messages?","Make consumers idempotent: store processed message IDs / use unique constraints / upserts, and check before applying side effects."],
+["What triggers a rebalance and why is it a problem?","A consumer joins/leaves/crashes, polls exceed max.poll.interval.ms, or partitions change. Processing pauses during a rebalance. Mitigate with cooperative sticky assignment, static membership and fast processing."],
+["What is consumer lag?","Latest offset minus committed offset: how far behind consumers are. Monitor it; growing lag means consumers can't keep up (scale consumers up to the partition count, optimise processing)."],
+["How do you handle poison messages / failures in Spring Kafka?","DefaultErrorHandler with backoff retries, then publish to a dead-letter topic (DeadLetterPublishingRecoverer), or non-blocking retry topics (@RetryableTopic). Monitor and reprocess the DLT."],
+["Kafka vs RabbitMQ?","Kafka: a distributed log, high throughput, retention & replay, ordering per partition, stream processing. RabbitMQ: a traditional broker, flexible routing, per-message acks, messages deleted after consumption. Kafka suits event streaming; RabbitMQ suits task queues."],
+["How many partitions should a topic have?","Based on target throughput / per-consumer throughput, expected parallelism and future growth. You can add partitions later but not remove them, and adding them changes key → partition mapping."],
+["What is KRaft?","Kafka's built-in Raft-based metadata quorum that replaced ZooKeeper (ZooKeeper was removed in Kafka 4.0). Simpler operations and faster controller failover."],
+["What is log compaction?","Keeps at least the latest value per key instead of deleting by time. Useful for state/changelog topics (e.g. the latest account balance)."]
+]],
+["SQL",[
+["Second highest salary","SELECT MAX(salary) FROM emp WHERE salary < (SELECT MAX(salary) FROM emp); or use DENSE_RANK() = 2 in a subquery/CTE."],
+["Nth highest salary per department / top 3 per department","WITH r AS (SELECT *, DENSE_RANK() OVER (PARTITION BY dept ORDER BY salary DESC) rk FROM emp) SELECT * FROM r WHERE rk <= 3;"],
+["Find duplicate records","SELECT col, COUNT(*) FROM t GROUP BY col HAVING COUNT(*) > 1;"],
+["Delete duplicates but keep one","WITH d AS (SELECT id, ROW_NUMBER() OVER (PARTITION BY email ORDER BY id) rn FROM t) DELETE FROM t WHERE id IN (SELECT id FROM d WHERE rn > 1);"],
+["Employees who earn more than their manager","SELECT e.name FROM emp e JOIN emp m ON e.manager_id = m.id WHERE e.salary > m.salary; (self join)"],
+["Find rows in one table that don't exist in another","SELECT a.* FROM orders a LEFT JOIN shipments s ON a.id = s.order_id WHERE s.order_id IS NULL; Also know NOT EXISTS, FULL OUTER JOIN for mismatches on both sides, and EXCEPT."],
+["Difference between JOIN types","INNER: only matches. LEFT: all left rows + matches (NULLs otherwise). RIGHT: the mirror. FULL: everything from both. CROSS: Cartesian product. SELF: a table joined to itself."],
+["WHERE vs HAVING","WHERE filters rows before grouping; HAVING filters groups after aggregation."],
+["DELETE vs TRUNCATE vs DROP","DELETE: row-level, can use WHERE, logged, fires triggers, can roll back. TRUNCATE: removes all rows fast, minimal logging, resets identity. DROP: removes the table itself."],
+["UNION vs UNION ALL","UNION removes duplicates (extra sort/hash cost); UNION ALL keeps all rows and is faster."],
+["How do indexes work? When is an index not used?","Usually a B-tree for fast lookups/range scans. Not used for: functions on the column (WHERE UPPER(name)=…), leading wildcards (LIKE '%x'), low selectivity, a type mismatch, or not using the leftmost column of a composite index."],
+["Clustered vs non-clustered index","Clustered: table rows physically ordered by the key (one per table, e.g. a MySQL InnoDB primary key). Non-clustered: a separate structure pointing to the rows."],
+["ACID and isolation levels","Atomicity, Consistency, Isolation, Durability. Levels: Read Uncommitted (dirty reads) → Read Committed (Postgres default) → Repeatable Read (MySQL default) → Serializable (no anomalies, the slowest)."],
+["Running total with window functions","SELECT txn_date, amount, SUM(amount) OVER (ORDER BY txn_date ROWS UNBOUNDED PRECEDING) AS running_total FROM txns;"],
+["Explain normalization","Removing redundancy: 1NF atomic values; 2NF no partial dependency on a composite key; 3NF no transitive dependency. Denormalize deliberately for read performance."]
+]],
+["JavaScript & React",[
+["var vs let vs const?","var: function-scoped, hoisted & initialized as undefined. let/const: block-scoped, hoisted but in the temporal dead zone. const can't be reassigned (objects can still be mutated)."],
+["What is a closure?","A function remembers variables from its outer scope even after the outer function returns. Used for data privacy, function factories, debounce, and hooks in React."],
+["Explain the event loop","JS is single-threaded. The call stack runs sync code; async callbacks queue up. Microtasks (promises) run before the next macrotask (setTimeout, I/O). Classic question: the output order of console.log + setTimeout + Promise."],
+["Promises vs async/await?","async/await is syntax over promises that makes async code read like sync code. Handle errors with try/catch; use Promise.all for parallel calls."],
+["How does 'this' work?","Determined by how a function is called: method call → the object; plain call → undefined (strict mode); arrow functions inherit this lexically; call/apply/bind set it explicitly."],
+["What is the virtual DOM / reconciliation in React?","React builds a tree of elements, diffs the new tree against the previous one and applies minimal DOM updates. Keys help it match list items."],
+["Props vs state?","Props: inputs from the parent, read-only. State: data owned by the component that triggers a re-render when updated with its setter."],
+["How does useEffect work? Dependencies & cleanup?","Runs after render. [] = run on mount; [a, b] = run when they change; no array = run every render. Return a cleanup function (unsubscribe, abort fetch, clear timers). Avoid missing dependencies."],
+["Why are keys important in lists?","They give items stable identity so React can reorder/update correctly. Don't use the array index when items can be reordered, inserted or deleted."],
+["Controlled vs uncontrolled components?","Controlled: the input value lives in React state (value + onChange). Uncontrolled: the DOM holds the value, read via a ref. React Hook Form uses uncontrolled inputs for performance."],
+["useMemo vs useCallback vs React.memo?","useMemo caches a computed value; useCallback caches a function reference; React.memo skips re-rendering a component when its props are shallow-equal. Use them when profiling shows a problem."],
+["Context vs Redux/Zustand?","Context: passing rarely-changing values (theme, auth user) without prop drilling; every consumer re-renders on change. Redux Toolkit/Zustand: complex or frequently-updated global state, devtools, middleware. Server data belongs in TanStack Query."],
+["How do you implement protected routes with JWT?","Store the auth state in context; a wrapper route checks for a valid token/user, otherwise it redirects to /login. Attach the token via an axios interceptor; handle 401s with refresh/logout. Prefer httpOnly cookies over localStorage for security."],
+["What is CORS and how do you fix CORS errors with Spring Boot?","The browser blocks cross-origin requests unless the server allows them. Configure allowed origins/methods/headers in Spring (CorsConfigurationSource in Security, or @CrossOrigin), or use a dev proxy in Vite."],
+["Debounce vs throttle?","Debounce: run only after the calls stop for X ms (search box). Throttle: run at most once per X ms (scroll handler). Be ready to write debounce."]
+]],
+["DevOps, Git & Testing",[
+["git merge vs rebase?","Merge preserves history with a merge commit. Rebase replays commits on top of another branch for linear history. Never rebase shared/public branches."],
+["git reset vs revert?","reset moves the branch pointer (rewrites history, local use). revert creates a new commit that undoes a previous one (safe for shared branches)."],
+["Write a Dockerfile for a Spring Boot app","Multi-stage: build with a Maven + JDK image, copy the jar into a slim JRE image (e.g. eclipse-temurin:21-jre), run as a non-root user, EXPOSE 8080, ENTRYPOINT [\"java\",\"-jar\",\"app.jar\"]. Mention layered jars for caching."],
+["Image vs container?","Image: a read-only template (layers). Container: a running instance of an image with a writable layer."],
+["Describe a CI/CD pipeline you'd set up","On PR: build, unit + integration tests (Testcontainers), static analysis (Sonar), security scan. On merge: build the Docker image, push it to a registry, deploy to dev → QA → prod with approvals, smoke tests, rollback plan."],
+["Pod vs Deployment vs Service in Kubernetes?","Pod: the smallest unit, one or more containers. Deployment: manages replicas & rolling updates of pods. Service: a stable network endpoint/load balancer in front of pods."],
+["Unit vs integration tests?","Unit: one class in isolation with mocks; fast. Integration: multiple components together with a real DB/Kafka (Testcontainers), slower but catches wiring issues."],
+["Mockito mock vs spy?","Mock: a fake object, all methods stubbed (return defaults). Spy: wraps a real object, real methods run unless stubbed."],
+["@WebMvcTest vs @SpringBootTest?","@WebMvcTest loads only the web layer (controllers, advice) with MockMvc, so it is fast. @SpringBootTest loads the full context, for end-to-end integration tests."]
+]],
+["SE Practices & Agile",[
+["Explain the Scrum ceremonies","Sprint planning (what & how), daily stand-up (15 min: progress, plan, blockers), sprint review (demo to stakeholders), retrospective (improve the process). Sprints are usually 2 weeks."],
+["What are story points? How do you estimate?","A relative measure of effort, complexity and uncertainty, not hours. Fibonacci scale, planning poker for team consensus; velocity is used for forecasting."],
+["What's a Definition of Done?","A shared checklist an item must meet to count as done: code reviewed, tests written & passing, documentation updated, deployed to QA, acceptance criteria met."],
+["Requirements change mid-sprint: what do you do?","Raise it with the PO; the sprint goal is protected. Changes usually go to the backlog for the next sprint. If urgent, the PO negotiates a swap of equal size or the sprint is cancelled in extreme cases."],
+["Explain SOLID with examples","S: one reason to change (separate the ReportGenerator from the ReportPrinter). O: extend without modifying (new DiscountStrategy implementations). L: subtypes must be substitutable (the Square/Rectangle problem). I: small focused interfaces. D: depend on abstractions (inject a PaymentGateway interface)."],
+["Which design patterns have you used?","Strategy (pluggable discount/shipping rules in ShopSphere), Builder (DTOs/Lombok), Factory (parser per file type), Observer (Kafka events / Spring events), Singleton (Spring beans), Template Method (Spring's JdbcTemplate/KafkaTemplate), Adapter (wrapping an external API)."],
+["What do you look for in a code review?","Correctness & edge cases, readability/naming, tests, security issues, performance concerns, consistency with conventions, small focused PRs. Be kind and specific; review the code, not the person."],
+["How do you handle a production incident?","Acknowledge it, assess the impact, communicate, mitigate first (rollback, feature flag, restart), then find the root cause using logs/metrics/traces, fix it, and run a blameless postmortem with action items. (Use a real example from your current production-support work.)"]
+]],
+["Coding / DSA (practise in Java)",[
+["Most-asked problems for 0–3 yrs","Two Sum, Valid Parentheses, Reverse Linked List, Merge Two Sorted Lists, Best Time to Buy/Sell Stock, Longest Substring Without Repeating Characters, Group Anagrams, Top K Frequent Elements, Merge Intervals, Product of Array Except Self, Binary Search variants, Kth Largest Element, Level Order Traversal, Number of Islands, LRU Cache, Missing Number, Rotate Array, Climbing Stairs, Coin Change."],
+["Java-specific coding questions","Thread-safe singleton; producer-consumer with BlockingQueue; print odd/even with two threads; a custom immutable class; an LRU cache with LinkedHashMap; character frequency with streams; a custom exception plus handling; sorting with a Comparator chain."],
+["How to approach a coding round","Clarify inputs/edge cases → state a brute-force approach + its complexity → optimise → code cleanly → dry-run with an example → discuss time/space complexity. Think out loud the whole time."],
+["Low-level design questions","Parking lot, library management, Splitwise, ATM, elevator, rate limiter, vending machine. Approach: requirements → entities/classes → relationships → key methods → patterns → code the core flow."]
+]],
+["System Design (basic level)",[
+["Design a URL shortener","APIs (shorten, redirect), ID generation (base62 of a counter/Snowflake ID), DB (key → URL), cache hot URLs in Redis, 301 vs 302 redirects, analytics via async events, scaling reads."],
+["Design a notification service","API → Kafka topic → channel workers (email/SMS/push) → provider adapters; user preferences, templates, retries + DLQ, rate limiting, idempotency, status tracking."],
+["Design an e-commerce order system","Services: catalog, cart, order, inventory, payment, notification. Order flow as a Saga over Kafka; inventory reservation with optimistic locking; idempotency keys on checkout; outbox for events; Redis cache for the catalog; read replicas; order status tracking. Prepare it well, since it matches ShopSphere."],
+["Design a ticket booking system (BookMyShow)","Seat holds with TTL (Redis lock), preventing double booking (locking/unique constraints), payment timeout releases seats, high traffic on popular shows (queues, caching), notifications."],
+["Design a rate limiter","Algorithms: token bucket, leaky bucket, fixed/sliding window. Redis counters with TTL/Lua for distributed limits; apply at the API gateway; return 429 with Retry-After."],
+["How would you scale a Spring Boot app?","Stateless services behind a load balancer, horizontal scaling (K8s HPA), caching (Redis), DB read replicas & indexing, connection pool tuning, async processing via Kafka, CDN for static content."]
+]],
+["HR & Behavioural (use STAR)",[
+["Tell me about yourself","Use the 60–90 second script in 'The Switch Story' tab: past (current role) → present (Java skills + projects) → future (this role)."],
+["Why are you switching to development?","Moving toward building systems, not away from your current role. See the script in 'The Switch Story' tab."],
+["Why switch so early?","Foundation years; the switch costs least now; domain knowledge as a head start. See 'The Switch Story' tab."],
+["Why do you want to join our company?","Research it: their tech stack, products, engineering blog and what interests you about their product. Connect 2 specifics to your goals and skills."],
+["What are your strengths and weaknesses?","Strength with evidence (e.g. attention to data accuracy from your current role, fast self-learning shown by the projects). A real weakness you're working on (e.g. 'still building depth in system design, so I'm doing X')."],
+["Describe a challenging problem you solved","STAR: a hard data issue you traced at work, or a tough bug in your project (e.g. Kafka duplicate processing → made the consumer idempotent). Quantify the result."],
+["Tell me about a conflict with a teammate or stakeholder","STAR; focus on understanding their view, data-driven discussion, the outcome and what you learned. No blaming."],
+["Tell me about a mistake you made","A real, moderate mistake, owned honestly → how you fixed it → the process change you introduced so it doesn't recur."],
+["Working under a tight deadline","E.g. a production deadline at your current job: prioritised, communicated early, delivered. Use a real example."],
+["How do you learn a new technology?","Official docs → a small hands-on project → go deeper on internals → teach/write about it. Point to how you learned Spring Boot/Kafka while working full-time."],
+["Where do you see yourself in 5 years?","A strong full stack/backend engineer who owns services end to end, mentors juniors, and designs systems with confidence. Linked to growth at this company."],
+["Do you have any questions for us?","Always ask 2–3. See the list in 'The Switch Story' tab."]
+]]
+];
+
+// ---------- RENDER ----------
+var store={};
+try{store=JSON.parse(localStorage.getItem("jfs-progress")||"{}")}catch(e){store={}}
+function save(){try{localStorage.setItem("jfs-progress",JSON.stringify(store))}catch(e){}}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function tagClass(t){return t==="Paid"?"paid":t==="Book"?"book":t==="YouTube"?"yt":""}
+function resHTML(list){return list.map(function(r){return '<a href="'+r[1]+'" target="_blank" rel="noopener"><b>'+esc(r[0])+'<span class="tag '+tagClass(r[3])+'">'+r[3]+'</span></b><span>'+esc(r[2])+'</span></a>'}).join("")}
+
+Object.keys(T).forEach(function(k){
+  var d=T[k],sec=document.getElementById(k),h='<h2>'+esc(d.title)+'</h2><p class="intro">'+esc(d.intro)+'</p>';
+  h+='<div class="prog" id="p-'+k+'"></div><div class="bar"><div id="b-'+k+'"></div></div>';
+  h+='<h3>Topics</h3>';
+  d.groups.forEach(function(g,gi){
+    h+='<details class="grp"'+(gi===0?' open':'')+'><summary><span>'+esc(g[0])+'</span><span class="cnt" id="c-'+k+'-'+gi+'"></span></summary><ul>';
+    g[1].forEach(function(it,ii){
+      var id=k+"-"+gi+"-"+ii,on=store[id]?" checked":"";
+      h+='<li class="'+(store[id]?"done":"")+'"><label><input type="checkbox" data-id="'+id+'"'+on+'><span><span class="t">'+esc(it[0])+'</span>'+(it[1]?'<br><span class="sub">'+esc(it[1])+'</span>':'')+'</span></label></li>';
+    });
+    h+='</ul></details>';
+  });
+  if(P[k]){h+='<h3>🛠️ Hands-on mini projects</h3><p class="intro" style="font-size:13.5px">Build at least two of these before moving on. Put each on GitHub with a short README.</p>';
+    P[k].forEach(function(p){h+='<div class="card proj"><b>'+esc(p[0])+'</b> <span class="tag lvl-'+p[1].toLowerCase()+'">'+p[1]+'</span><p style="margin:6px 0">'+esc(p[2])+'</p><span class="sub" style="font-size:13px;color:var(--mute)">Practises: '+esc(p[3])+'</span></div>'});}
+  h+='<h3>Resources</h3><div class="res">'+resHTML(R[k]||[])+'</div>';
+  sec.innerHTML=h;
+});
+document.getElementById("res-start").innerHTML=resHTML(R.start);
+document.getElementById("res-jobs").innerHTML=resHTML(R.jobs);
+
+document.addEventListener("change",function(e){
+  var c=e.target;if(!c.dataset||!c.dataset.id)return;
+  if(c.checked)store[c.dataset.id]=1;else delete store[c.dataset.id];
+  c.closest("li").className=c.checked?"done":"";save();updateProgress();
+});
+
+function updateProgress(){
+  var all=0,done=0,rows="";
+  Object.keys(T).forEach(function(k){
+    var t=0,dn=0;
+    T[k].groups.forEach(function(g,gi){
+      var gt=g[1].length,gd=0;
+      g[1].forEach(function(_,ii){if(store[k+"-"+gi+"-"+ii])gd++});
+      document.getElementById("c-"+k+"-"+gi).textContent=gd+"/"+gt;t+=gt;dn+=gd;
+    });
+    var p=Math.round(dn*100/t);
+    document.getElementById("p-"+k).textContent="Progress: "+dn+" / "+t+" topics ("+p+"%)";
+    document.getElementById("b-"+k).style.width=p+"%";
+    rows+='<div style="display:flex;align-items:center;gap:8px;margin:4px 0;font-size:13px"><span style="width:150px;flex:0 0 150px">'+esc(T[k].title.split(":")[0].split("&")[0])+'</span><div class="bar" style="flex:1"><div style="width:'+p+'%"></div></div><span style="width:36px;text-align:right">'+p+'%</span></div>';
+    all+=t;done+=dn;
+  });
+  var op=Math.round(done*100/all);
+  document.getElementById("overallTxt").textContent=done+" of "+all+" topics complete ("+op+"%)";
+  document.getElementById("overallBar").style.width=op+"%";
+  document.getElementById("tabProg").innerHTML=rows;
+}
+
+// Q&A
+var qa=document.getElementById("qa"),qh="";
+Q.forEach(function(c){
+  qh+='<div class="qcat"><h3>'+esc(c[0])+' <span class="tag">'+c[1].length+'</span></h3>';
+  c[1].forEach(function(q){qh+='<details data-s="'+esc((q[0]+" "+q[1]).toLowerCase())+'"><summary>'+esc(q[0])+'</summary><div>'+esc(q[1])+'</div></details>'});
+  qh+='</div>';
+});
+qa.innerHTML=qh;
+document.getElementById("qsearch").addEventListener("input",function(){
+  var v=this.value.toLowerCase().trim();
+  qa.querySelectorAll(".qcat").forEach(function(cat){
+    var any=false;
+    cat.querySelectorAll("details").forEach(function(d){var m=!v||d.dataset.s.indexOf(v)>-1;d.style.display=m?"":"none";if(m)any=true});
+    cat.style.display=any?"":"none";
+  });
+});
+
+// Tabs
+var nav=document.getElementById("nav"),tabs=document.querySelectorAll("section.tab");
+tabs.forEach(function(s){
+  var b=document.createElement("button");b.textContent=s.dataset.label;b.dataset.t=s.id;
+  b.onclick=function(){show(s.id)};nav.appendChild(b);
+});
+function show(id){
+  tabs.forEach(function(s){s.classList.toggle("active",s.id===id)});
+  nav.querySelectorAll("button").forEach(function(b){b.classList.toggle("active",b.dataset.t===id);if(b.dataset.t===id)b.scrollIntoView({inline:"center",block:"nearest"})});
+  window.scrollTo(0,0);
+}
+show("start");updateProgress();
+</script>
+</body>
+</html>
